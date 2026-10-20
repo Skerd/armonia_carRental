@@ -1,0 +1,250 @@
+{
+    "carRentalConfig_already_exists": {
+        "message": "Cilësimet e qirasë ekzistojnë tashmë për këtë biznes.",
+        "error_code": "carRentalConfig_already_exists",
+        "status": 409
+    },
+    "carRentalConfig_not_found": {
+        "message": "Cilësimet e qirasë së makinave nuk u gjetën.",
+        "error_code": "carRentalConfig_not_found",
+        "status": 404
+    },
+    "car_rental_not_configured": {
+        "message": "Qiraja online e makinave nuk është e disponueshme për këtë biznes.",
+        "error_code": "car_rental_not_configured",
+        "status": 404
+    },
+    "rentalExtra_already_exists": {
+        "message": "Një shtesë tjetër e përdor tashmë këtë emër.",
+        "error_code": "rentalExtra_already_exists",
+        "status": 409
+    },
+    "rentalExtra_not_found": {
+        "message": "Një shtesë që zgjodhët nuk ofrohet më.",
+        "error_code": "rentalExtra_not_found",
+        "status": 404
+    },
+    "rentalLocation_already_exists": {
+        "message": "Një vendndodhje tjetër e përdor tashmë këtë emër.",
+        "error_code": "rentalLocation_already_exists",
+        "status": 409
+    },
+    "rentalLocation_not_found": {
+        "message": "Pika e qirasë nuk u gjet.",
+        "error_code": "rentalLocation_not_found",
+        "status": 404
+    },
+    "rentalReservation_already_exists": {
+        "message": "Ky rezervim është bërë tashmë. Rifreskoni për ta parë.",
+        "error_code": "rentalReservation_already_exists",
+        "status": 409
+    },
+    "rentalReservation_not_found": {
+        "message": "Rezervimi nuk u gjet.",
+        "error_code": "rentalReservation_not_found",
+        "status": 404
+    },
+    "rental_category_unavailable": {
+        "message": "Asnjë makinë në këtë kategori nuk është e lirë për atë kohë. Provoni data të tjera ose një kategori tjetër.",
+        "error_code": "rental_category_unavailable",
+        "status": 409
+    },
+    "rental_currency_not_configured": {
+        "message": "Shtoni një monedhë para se të konfiguroni qiranë e makinave.",
+        "error_code": "rental_currency_not_configured"
+    },
+    "rental_duration_too_long": {
+        "message": "Një qira mund të zgjasë të shumtën {} ditë.",
+        "error_code": "rental_duration_too_long"
+    },
+    "rental_duration_too_short": {
+        "message": "Një qira duhet të zgjasë të paktën {} orë.",
+        "error_code": "rental_duration_too_short"
+    },
+    "rental_extra_name_taken": {
+        "message": "Një shtesë tjetër e ka tashmë këtë emër.",
+        "error_code": "rental_extra_name_taken",
+        "status": 409
+    },
+    "rental_extra_not_found": {
+        "message": "Një shtesë që zgjodhët nuk ofrohet më.",
+        "error_code": "rental_extra_not_found",
+        "status": 404
+    },
+    "rental_extra_quantity_exceeded": {
+        "message": "Mund të shtoni të shumtën {} nga {}.",
+        "error_code": "rental_extra_quantity_exceeded"
+    },
+    "rental_guest_booking_disabled": {
+        "message": "Ju lutemi hyni për të rezervuar.",
+        "error_code": "rental_guest_booking_disabled",
+        "status": 403
+    },
+    "rental_hold_expired": {
+        "message": "Koha e rezervimit mbaroi para se të vinte pagesa. Ju lutemi rezervoni përsëri.",
+        "error_code": "rental_hold_expired",
+        "status": 409
+    },
+    "rental_hours_end_before_start": {
+        "message": "Çdo rresht i orarit duhet të mbarojë pasi fillon.",
+        "error_code": "rental_hours_end_before_start"
+    },
+    "rental_invalid_pickup_time": {
+        "message": "Ajo orë marrjeje nuk ekziston në atë vend sepse ora ndryshon atë natë. Zgjidhni një orë tjetër.",
+        "error_code": "rental_invalid_pickup_time"
+    },
+    "rental_invalid_return_time": {
+        "message": "Ajo orë kthimi nuk ekziston në atë vend sepse ora ndryshon atë natë. Zgjidhni një orë tjetër.",
+        "error_code": "rental_invalid_return_time"
+    },
+    "rental_invalid_timezone": {
+        "message": "'{}' nuk është zonë kohore e vlefshme. Përdorni një emër si Europe/Zurich.",
+        "error_code": "rental_invalid_timezone"
+    },
+    "rental_location_closed_at_pickup": {
+        "message": "{} është e mbyllur në orën e zgjedhur të marrjes. Zgjidhni një orë brenda orarit të punës.",
+        "error_code": "rental_location_closed_at_pickup"
+    },
+    "rental_location_closed_at_return": {
+        "message": "{} është e mbyllur në orën e zgjedhur të kthimit. Zgjidhni një orë brenda orarit të punës.",
+        "error_code": "rental_location_closed_at_return"
+    },
+    "rental_location_name_taken": {
+        "message": "Një pikë tjetër e ka tashmë këtë emër.",
+        "error_code": "rental_location_name_taken",
+        "status": 409
+    },
+    "rental_location_no_pickup": {
+        "message": "{} nuk ofron marrje.",
+        "error_code": "rental_location_no_pickup"
+    },
+    "rental_location_no_return": {
+        "message": "{} nuk pranon kthime.",
+        "error_code": "rental_location_no_return"
+    },
+    "rental_location_not_found": {
+        "message": "Pika e qirasë nuk u gjet.",
+        "error_code": "rental_location_not_found",
+        "status": 404
+    },
+    "rental_no_show_too_early": {
+        "message": "Mosparaqitja mund të regjistrohet vetëm pasi të ketë kaluar ora e marrjes.",
+        "error_code": "rental_no_show_too_early",
+        "status": 409
+    },
+    "rental_online_payment_unavailable": {
+        "message": "Pagesa online nuk është e disponueshme për këtë rezervim.",
+        "error_code": "rental_online_payment_unavailable"
+    },
+    "rental_payment_exceeds_due": {
+        "message": "Pagesa është më e madhe se {} që mbetet për t'u paguar.",
+        "error_code": "rental_payment_exceeds_due"
+    },
+    "rental_pickup_too_far_ahead": {
+        "message": "Rezervimet hapen të shumtën {} ditë përpara.",
+        "error_code": "rental_pickup_too_far_ahead"
+    },
+    "rental_pickup_too_soon": {
+        "message": "Marrja duhet të jetë të paktën {} orë nga tani.",
+        "error_code": "rental_pickup_too_soon"
+    },
+    "rental_price_changed": {
+        "message": "Çmimi ndryshoi që kur e patë. Ju lutemi kontrolloni totalin e ri.",
+        "error_code": "rental_price_changed",
+        "status": 409
+    },
+    "rental_reservation_invalid_status": {
+        "message": "Kjo nuk mund të bëhet në gjendjen aktuale të rezervimit.",
+        "error_code": "rental_reservation_invalid_status",
+        "status": 409
+    },
+    "rental_reservation_not_found": {
+        "message": "Rezervimi nuk u gjet.",
+        "error_code": "rental_reservation_not_found",
+        "status": 404
+    },
+    "rental_return_before_pickup": {
+        "message": "Kthimi duhet të jetë pas marrjes.",
+        "error_code": "rental_return_before_pickup"
+    },
+    "rental_season_end_before_start": {
+        "message": "Një sezon duhet të mbarojë në datën e fillimit ose pas saj.",
+        "error_code": "rental_season_end_before_start"
+    },
+    "rental_setup_missing_location": {
+        "message": "Rezervimi online nuk mund të aktivizohet ende: shtoni një pikë aktive që ofron marrje.",
+        "error_code": "rental_setup_missing_location"
+    },
+    "rental_setup_missing_vehicle": {
+        "message": "Rezervimi online nuk mund të aktivizohet ende: shtoni një kategori publike me të paktën një mjet aktiv.",
+        "error_code": "rental_setup_missing_vehicle"
+    },
+    "rental_terms_not_accepted": {
+        "message": "Ju lutemi pranoni kushtet e qirasë për të rezervuar.",
+        "error_code": "rental_terms_not_accepted"
+    },
+    "rental_vehicle_wrong_category": {
+        "message": "Mjeti nuk i përket kategorisë së rezervuar.",
+        "error_code": "rental_vehicle_wrong_category"
+    },
+    "vehicleBlock_not_found": {
+        "message": "Bllokimi i mjetit nuk u gjet.",
+        "error_code": "vehicleBlock_not_found",
+        "status": 404
+    },
+    "vehicleCategory_already_exists": {
+        "message": "Një kategori tjetër e përdor tashmë këtë emër adrese web.",
+        "error_code": "vehicleCategory_already_exists",
+        "status": 409
+    },
+    "vehicleCategory_not_found": {
+        "message": "Kategoria e mjetit nuk u gjet.",
+        "error_code": "vehicleCategory_not_found",
+        "status": 404
+    },
+    "vehicle_already_exists": {
+        "message": "Një automjet tjetër e ka tashmë këtë targë.",
+        "error_code": "vehicle_already_exists",
+        "status": 409
+    },
+    "vehicle_block_overlaps_reservation": {
+        "message": "Mjeti është i rezervuar gjatë asaj kohe ({}). Ricaktojeni fillimisht atë rezervim.",
+        "error_code": "vehicle_block_overlaps_reservation",
+        "status": 409
+    },
+    "vehicle_category_not_found": {
+        "message": "Kategoria e mjetit nuk u gjet.",
+        "error_code": "vehicle_category_not_found",
+        "status": 404
+    },
+    "vehicle_category_slug_taken": {
+        "message": "Një kategori tjetër mjeti e përdor tashmë këtë slug.",
+        "error_code": "vehicle_category_slug_taken",
+        "status": 409
+    },
+    "vehicle_has_future_reservations": {
+        "message": "Ky mjet ka {} rezervim(e) të ardhshme. Ricaktojini ose anulojini fillimisht.",
+        "error_code": "vehicle_has_future_reservations",
+        "status": 409
+    },
+    "vehicle_not_active": {
+        "message": "Ky mjet është në mirëmbajtje ose i tërhequr dhe nuk mund të jepet me qira.",
+        "error_code": "vehicle_not_active",
+        "status": 409
+    },
+    "vehicle_not_found": {
+        "message": "Mjeti nuk u gjet.",
+        "error_code": "vehicle_not_found",
+        "status": 404
+    },
+    "vehicle_plate_taken": {
+        "message": "Një mjet tjetër e ka tashmë këtë targë.",
+        "error_code": "vehicle_plate_taken",
+        "status": 409
+    },
+    "vehicle_unavailable": {
+        "message": "Ky mjet është tashmë i rezervuar ose i bllokuar për atë kohë.",
+        "error_code": "vehicle_unavailable",
+        "status": 409
+    }
+}

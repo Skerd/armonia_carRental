@@ -1,0 +1,250 @@
+{
+    "carRentalConfig_already_exists": {
+        "message": "Car rental settings already exist for this business.",
+        "error_code": "carRentalConfig_already_exists",
+        "status": 409
+    },
+    "carRentalConfig_not_found": {
+        "message": "Car rental settings were not found.",
+        "error_code": "carRentalConfig_not_found",
+        "status": 404
+    },
+    "car_rental_not_configured": {
+        "message": "Online car rental is not available for this business.",
+        "error_code": "car_rental_not_configured",
+        "status": 404
+    },
+    "rentalExtra_already_exists": {
+        "message": "Another extra already uses this name.",
+        "error_code": "rentalExtra_already_exists",
+        "status": 409
+    },
+    "rentalExtra_not_found": {
+        "message": "An extra you chose is no longer offered.",
+        "error_code": "rentalExtra_not_found",
+        "status": 404
+    },
+    "rentalLocation_already_exists": {
+        "message": "Another location already uses this name.",
+        "error_code": "rentalLocation_already_exists",
+        "status": 409
+    },
+    "rentalLocation_not_found": {
+        "message": "The rental location was not found.",
+        "error_code": "rentalLocation_not_found",
+        "status": 404
+    },
+    "rentalReservation_already_exists": {
+        "message": "This booking was already made. Refresh to see it.",
+        "error_code": "rentalReservation_already_exists",
+        "status": 409
+    },
+    "rentalReservation_not_found": {
+        "message": "The reservation was not found.",
+        "error_code": "rentalReservation_not_found",
+        "status": 404
+    },
+    "rental_category_unavailable": {
+        "message": "No car in this category is free for that time. Try other dates or another category.",
+        "error_code": "rental_category_unavailable",
+        "status": 409
+    },
+    "rental_currency_not_configured": {
+        "message": "Add a currency before setting up car rental.",
+        "error_code": "rental_currency_not_configured"
+    },
+    "rental_duration_too_long": {
+        "message": "A rental can last at most {} days.",
+        "error_code": "rental_duration_too_long"
+    },
+    "rental_duration_too_short": {
+        "message": "A rental must last at least {} hours.",
+        "error_code": "rental_duration_too_short"
+    },
+    "rental_extra_name_taken": {
+        "message": "Another extra already has this name.",
+        "error_code": "rental_extra_name_taken",
+        "status": 409
+    },
+    "rental_extra_not_found": {
+        "message": "An extra you chose is no longer offered.",
+        "error_code": "rental_extra_not_found",
+        "status": 404
+    },
+    "rental_extra_quantity_exceeded": {
+        "message": "You can add at most {} of {}.",
+        "error_code": "rental_extra_quantity_exceeded"
+    },
+    "rental_guest_booking_disabled": {
+        "message": "Please sign in to book.",
+        "error_code": "rental_guest_booking_disabled",
+        "status": 403
+    },
+    "rental_hold_expired": {
+        "message": "This booking's reservation time ran out before payment arrived. Please book again.",
+        "error_code": "rental_hold_expired",
+        "status": 409
+    },
+    "rental_hours_end_before_start": {
+        "message": "Each opening-hours row must end after it starts.",
+        "error_code": "rental_hours_end_before_start"
+    },
+    "rental_invalid_pickup_time": {
+        "message": "The pickup time doesn't exist at the location because the clocks change that night. Choose another time.",
+        "error_code": "rental_invalid_pickup_time"
+    },
+    "rental_invalid_return_time": {
+        "message": "The return time doesn't exist at the location because the clocks change that night. Choose another time.",
+        "error_code": "rental_invalid_return_time"
+    },
+    "rental_invalid_timezone": {
+        "message": "'{}' is not a valid time zone. Use a name like Europe/Zurich.",
+        "error_code": "rental_invalid_timezone"
+    },
+    "rental_location_closed_at_pickup": {
+        "message": "{} is closed at the chosen pickup time. Pick a time within its opening hours.",
+        "error_code": "rental_location_closed_at_pickup"
+    },
+    "rental_location_closed_at_return": {
+        "message": "{} is closed at the chosen return time. Pick a time within its opening hours.",
+        "error_code": "rental_location_closed_at_return"
+    },
+    "rental_location_name_taken": {
+        "message": "Another location already has this name.",
+        "error_code": "rental_location_name_taken",
+        "status": 409
+    },
+    "rental_location_no_pickup": {
+        "message": "{} doesn't offer pickups.",
+        "error_code": "rental_location_no_pickup"
+    },
+    "rental_location_no_return": {
+        "message": "{} doesn't accept returns.",
+        "error_code": "rental_location_no_return"
+    },
+    "rental_location_not_found": {
+        "message": "The rental location was not found.",
+        "error_code": "rental_location_not_found",
+        "status": 404
+    },
+    "rental_no_show_too_early": {
+        "message": "A no-show can only be recorded after the pickup time has passed.",
+        "error_code": "rental_no_show_too_early",
+        "status": 409
+    },
+    "rental_online_payment_unavailable": {
+        "message": "Online payment isn't available for this booking.",
+        "error_code": "rental_online_payment_unavailable"
+    },
+    "rental_payment_exceeds_due": {
+        "message": "The payment is more than the {} still due.",
+        "error_code": "rental_payment_exceeds_due"
+    },
+    "rental_pickup_too_far_ahead": {
+        "message": "Bookings open at most {} days ahead.",
+        "error_code": "rental_pickup_too_far_ahead"
+    },
+    "rental_pickup_too_soon": {
+        "message": "Pickup must be at least {} hours from now.",
+        "error_code": "rental_pickup_too_soon"
+    },
+    "rental_price_changed": {
+        "message": "The price changed since you saw it. Please review the new total.",
+        "error_code": "rental_price_changed",
+        "status": 409
+    },
+    "rental_reservation_invalid_status": {
+        "message": "This can't be done in the reservation's current state.",
+        "error_code": "rental_reservation_invalid_status",
+        "status": 409
+    },
+    "rental_reservation_not_found": {
+        "message": "The reservation was not found.",
+        "error_code": "rental_reservation_not_found",
+        "status": 404
+    },
+    "rental_return_before_pickup": {
+        "message": "The return must be after the pickup.",
+        "error_code": "rental_return_before_pickup"
+    },
+    "rental_season_end_before_start": {
+        "message": "A season must end on or after its start date.",
+        "error_code": "rental_season_end_before_start"
+    },
+    "rental_setup_missing_location": {
+        "message": "Online booking can't be turned on yet: add an active location that offers pickups.",
+        "error_code": "rental_setup_missing_location"
+    },
+    "rental_setup_missing_vehicle": {
+        "message": "Online booking can't be turned on yet: add a public category with at least one active vehicle.",
+        "error_code": "rental_setup_missing_vehicle"
+    },
+    "rental_terms_not_accepted": {
+        "message": "Please accept the rental terms to book.",
+        "error_code": "rental_terms_not_accepted"
+    },
+    "rental_vehicle_wrong_category": {
+        "message": "The vehicle doesn't belong to the booked category.",
+        "error_code": "rental_vehicle_wrong_category"
+    },
+    "vehicleBlock_not_found": {
+        "message": "The vehicle block was not found.",
+        "error_code": "vehicleBlock_not_found",
+        "status": 404
+    },
+    "vehicleCategory_already_exists": {
+        "message": "Another category already uses this web address name.",
+        "error_code": "vehicleCategory_already_exists",
+        "status": 409
+    },
+    "vehicleCategory_not_found": {
+        "message": "The vehicle category was not found.",
+        "error_code": "vehicleCategory_not_found",
+        "status": 404
+    },
+    "vehicle_already_exists": {
+        "message": "Another vehicle already has this registration plate.",
+        "error_code": "vehicle_already_exists",
+        "status": 409
+    },
+    "vehicle_block_overlaps_reservation": {
+        "message": "The vehicle is booked during that time ({}). Reassign that reservation first.",
+        "error_code": "vehicle_block_overlaps_reservation",
+        "status": 409
+    },
+    "vehicle_category_not_found": {
+        "message": "The vehicle category was not found.",
+        "error_code": "vehicle_category_not_found",
+        "status": 404
+    },
+    "vehicle_category_slug_taken": {
+        "message": "Another vehicle category already uses this slug.",
+        "error_code": "vehicle_category_slug_taken",
+        "status": 409
+    },
+    "vehicle_has_future_reservations": {
+        "message": "This vehicle has {} upcoming reservation(s). Reassign or cancel them first.",
+        "error_code": "vehicle_has_future_reservations",
+        "status": 409
+    },
+    "vehicle_not_active": {
+        "message": "This vehicle is in maintenance or retired and can't be rented.",
+        "error_code": "vehicle_not_active",
+        "status": 409
+    },
+    "vehicle_not_found": {
+        "message": "The vehicle was not found.",
+        "error_code": "vehicle_not_found",
+        "status": 404
+    },
+    "vehicle_plate_taken": {
+        "message": "Another vehicle already has this registration plate.",
+        "error_code": "vehicle_plate_taken",
+        "status": 409
+    },
+    "vehicle_unavailable": {
+        "message": "This vehicle is already booked or blocked for that time.",
+        "error_code": "vehicle_unavailable",
+        "status": 409
+    }
+}
