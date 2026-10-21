@@ -34,6 +34,7 @@ export type RentalStorefrontCategory = {
     slug: string;
     description?: string;
     images: string[];
+    videos: string[];
     seats: number;
     doors?: number;
     luggage?: number;

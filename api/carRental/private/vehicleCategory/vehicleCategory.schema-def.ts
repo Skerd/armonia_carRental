@@ -28,6 +28,7 @@ export const VehicleCategorySchemaDef = {
     slug:             {type: "string", required: true, min: 1, max: VEHICLE_CATEGORY_SLUG_MAX, format: "slug"},
     description:      {type: "string", required: false, max: VEHICLE_CATEGORY_DESCRIPTION_MAX},
     images:           {type: "mediaIdArray", required: false, publicAccess: true},
+    videos:           {type: "mediaIdArray", required: false, publicAccess: true},
     seats:            {type: "number", required: true, ...VEHICLE_SEATS},
     doors:            {type: "number", required: false, ...VEHICLE_DOORS},
     luggage:          {type: "number", required: false, ...VEHICLE_LUGGAGE},

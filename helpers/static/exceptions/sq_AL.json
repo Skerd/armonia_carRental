@@ -202,6 +202,46 @@
         "error_code": "vehicleCategory_not_found",
         "status": 404
     },
+    "vehicleDamage_already_exists": {
+        "message": "Ky raport dëmtimi ekziston tashmë.",
+        "error_code": "vehicleDamage_already_exists",
+        "status": 409
+    },
+    "vehicleDamage_not_found": {
+        "message": "Raporti i dëmtimit nuk u gjet.",
+        "error_code": "vehicleDamage_not_found",
+        "status": 404
+    },
+    "vehicleDocument_already_exists": {
+        "message": "Ky dokument automjeti ekziston tashmë.",
+        "error_code": "vehicleDocument_already_exists",
+        "status": 409
+    },
+    "vehicleDocument_not_found": {
+        "message": "Dokumenti i automjetit nuk u gjet.",
+        "error_code": "vehicleDocument_not_found",
+        "status": 404
+    },
+    "vehicleInsurance_already_exists": {
+        "message": "Kjo policë sigurimi ekziston tashmë.",
+        "error_code": "vehicleInsurance_already_exists",
+        "status": 409
+    },
+    "vehicleInsurance_not_found": {
+        "message": "Polica e sigurimit të automjetit nuk u gjet.",
+        "error_code": "vehicleInsurance_not_found",
+        "status": 404
+    },
+    "vehicleMaintenance_already_exists": {
+        "message": "Ky regjistrim servisi ekziston tashmë.",
+        "error_code": "vehicleMaintenance_already_exists",
+        "status": 409
+    },
+    "vehicleMaintenance_not_found": {
+        "message": "Regjistrimi i servisit nuk u gjet.",
+        "error_code": "vehicleMaintenance_not_found",
+        "status": 404
+    },
     "vehicle_already_exists": {
         "message": "Një automjet tjetër e ka tashmë këtë targë.",
         "error_code": "vehicle_already_exists",
@@ -221,6 +261,11 @@
         "message": "Një kategori tjetër mjeti e përdor tashmë këtë slug.",
         "error_code": "vehicle_category_slug_taken",
         "status": 409
+    },
+    "vehicle_damage_reservation_mismatch": {
+        "message": "Ky rezervim është për një automjet tjetër. Zgjidhni një rezervim të makinës së dëmtuar.",
+        "error_code": "vehicle_damage_reservation_mismatch",
+        "status": 400
     },
     "vehicle_has_future_reservations": {
         "message": "Ky mjet ka {} rezervim(e) të ardhshme. Ricaktojini ose anulojini fillimisht.",

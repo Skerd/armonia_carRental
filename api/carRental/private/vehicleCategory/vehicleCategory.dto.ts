@@ -8,6 +8,7 @@ export type VehicleCategory = DeletedData & OwnershipData & LifeCycleData & {
     slug: string;
     description?: string;
     images?: Media[];
+    videos?: Media[];
     seats: number;
     doors?: number;
     luggage?: number;

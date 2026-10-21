@@ -202,6 +202,46 @@
         "error_code": "vehicleCategory_not_found",
         "status": 404
     },
+    "vehicleDamage_already_exists": {
+        "message": "Dieser Schadensbericht existiert bereits.",
+        "error_code": "vehicleDamage_already_exists",
+        "status": 409
+    },
+    "vehicleDamage_not_found": {
+        "message": "Der Schadensbericht wurde nicht gefunden.",
+        "error_code": "vehicleDamage_not_found",
+        "status": 404
+    },
+    "vehicleDocument_already_exists": {
+        "message": "Dieses Fahrzeugdokument existiert bereits.",
+        "error_code": "vehicleDocument_already_exists",
+        "status": 409
+    },
+    "vehicleDocument_not_found": {
+        "message": "Das Fahrzeugdokument wurde nicht gefunden.",
+        "error_code": "vehicleDocument_not_found",
+        "status": 404
+    },
+    "vehicleInsurance_already_exists": {
+        "message": "Diese Versicherungspolice existiert bereits.",
+        "error_code": "vehicleInsurance_already_exists",
+        "status": 409
+    },
+    "vehicleInsurance_not_found": {
+        "message": "Die Fahrzeugversicherung wurde nicht gefunden.",
+        "error_code": "vehicleInsurance_not_found",
+        "status": 404
+    },
+    "vehicleMaintenance_already_exists": {
+        "message": "Dieser Serviceeintrag existiert bereits.",
+        "error_code": "vehicleMaintenance_already_exists",
+        "status": 409
+    },
+    "vehicleMaintenance_not_found": {
+        "message": "Der Serviceeintrag wurde nicht gefunden.",
+        "error_code": "vehicleMaintenance_not_found",
+        "status": 404
+    },
     "vehicle_already_exists": {
         "message": "Ein anderes Fahrzeug hat bereits dieses Kennzeichen.",
         "error_code": "vehicle_already_exists",
@@ -221,6 +261,11 @@
         "message": "Eine andere Fahrzeugkategorie verwendet diesen Slug bereits.",
         "error_code": "vehicle_category_slug_taken",
         "status": 409
+    },
+    "vehicle_damage_reservation_mismatch": {
+        "message": "Diese Buchung gehört zu einem anderen Fahrzeug. Wählen Sie eine Buchung des beschädigten Autos.",
+        "error_code": "vehicle_damage_reservation_mismatch",
+        "status": 400
     },
     "vehicle_has_future_reservations": {
         "message": "Dieses Fahrzeug hat {} bevorstehende Reservierung(en). Weisen Sie sie zuerst neu zu oder stornieren Sie sie.",
