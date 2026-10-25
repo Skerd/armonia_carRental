@@ -13,7 +13,6 @@ export const RentalExtraSchemaDef = {
     pricing:     {type: "enum", required: true, options: RENTAL_EXTRA_PRICINGS},
     price:       {type: "number", required: true, min: 0},
     maxQuantity: {type: "number", required: true, ...RENTAL_EXTRA_QUANTITY},
-    isActive:    {type: "boolean", required: false},
     sortOrder:   {type: "number", required: false},
 } as const;
 

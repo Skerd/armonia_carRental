@@ -36,7 +36,6 @@ export const RentalLocationSchemaDef = {
     closures:      {type: "embeddedArray", required: false, items: RentalLocationClosureDef, maxItems: RENTAL_LOCATION_CLOSURES_MAX_ITEMS},
     pickupAllowed: {type: "boolean", required: false},
     returnAllowed: {type: "boolean", required: false},
-    isActive:      {type: "boolean", required: false},
 } as const;
 
 export type CreateRentalLocationFormType = InferCreateForm<typeof RentalLocationSchemaDef>;
