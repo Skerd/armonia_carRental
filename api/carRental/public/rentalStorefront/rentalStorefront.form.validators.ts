@@ -1,5 +1,5 @@
 import {buildCreateZodSchema} from "../../../../../core/helpers/schemaDefBuilder";
-import {RentalContactDef} from "../../private/rentalReservation/rentalReservation.forms";
+import {RentalContactDef} from "../../private/rentalReservation/rentalReservation.schema-def";
 import {BookRentalFormDef, ManageRentalFormDef, QuoteRentalFormDef, SearchRentalFormDef} from "./rentalStorefront.forms";
 
 export function searchRentalFormSchema(languageCode: string, form: any = null) {

@@ -3,7 +3,7 @@ import {
     RentalContactDef,
     RentalExtraSelectionDef,
     RentalTripDef,
-} from "../../private/rentalReservation/rentalReservation.forms";
+} from "../../private/rentalReservation/rentalReservation.schema-def";
 import {
     RENTAL_EXTRAS_MAX_ITEMS,
     RENTAL_IDEMPOTENCY_KEY,

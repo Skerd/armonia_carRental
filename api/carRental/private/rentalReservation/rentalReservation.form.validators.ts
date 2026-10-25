@@ -7,7 +7,7 @@ import {
     ReassignRentalVehicleFormDef,
     RecordRentalPaymentFormDef,
     ReturnRentalReservationFormDef,
-} from "./rentalReservation.forms";
+} from "./rentalReservation.schema-def";
 
 export function createRentalReservationFormSchema(languageCode: string, form: any = null) {
     return buildCreateZodSchema(CreateRentalReservationFormDef, languageCode, form);
