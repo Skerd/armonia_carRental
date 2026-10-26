@@ -6,6 +6,7 @@ import type {RentalPaymentPolicy} from "./carRentalConfig.schema-def";
 export type CarRentalConfig = DeletedData & OwnershipData & LifeCycleData & {
     _id: string;
     publicBookingEnabled: boolean;
+    listedOnPortal: boolean;
     currency?: CurrencySimple;
     minRentalHours: number;
     maxRentalDays: number;

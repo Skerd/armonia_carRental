@@ -124,4 +124,16 @@ export type RentalBookingResponse = {
 };
 
 export type PublicRentalReservationResponse = {data: PublicRentalReservation};
+
+/** A portal account's reservations across rental companies, each with its company and manage link token. */
+export type RentalMyReservationsResponse = {
+    data: {
+        reservation: PublicRentalReservation;
+        company: {
+            name: string;
+            slug: string
+        };
+        manageToken: string
+    }[];
+};
 export type PublicRentalReservationsResponse = {data: PublicRentalReservation[]};

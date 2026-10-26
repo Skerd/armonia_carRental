@@ -18,6 +18,7 @@ export const RENTAL_TERMS_TEXT_MAX = 20000;
 
 export const CarRentalConfigSchemaDef = {
     publicBookingEnabled:    {type: "boolean", required: false},
+    listedOnPortal:          {type: "boolean", required: false},
     currency:                {type: "objectId", required: true},
     minRentalHours:          {type: "number", required: true, ...RENTAL_MIN_RENTAL_HOURS},
     maxRentalDays:           {type: "number", required: true, ...RENTAL_MAX_RENTAL_DAYS},
