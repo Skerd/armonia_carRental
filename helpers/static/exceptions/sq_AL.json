@@ -14,6 +14,26 @@
         "error_code": "car_rental_not_configured",
         "status": 404
     },
+    "rentalBusinessAccount_already_exists": {
+        "message": "Një regjistrim tjetër i përdor tashmë këto të dhëna.",
+        "error_code": "rentalBusinessAccount_already_exists",
+        "status": 409
+    },
+    "rentalBusinessAccount_not_found": {
+        "message": "Regjistrimi nuk u gjet.",
+        "error_code": "rentalBusinessAccount_not_found",
+        "status": 404
+    },
+    "rentalDenyEntry_already_exists": {
+        "message": "Një regjistrim tjetër i përdor tashmë këto të dhëna.",
+        "error_code": "rentalDenyEntry_already_exists",
+        "status": 409
+    },
+    "rentalDenyEntry_not_found": {
+        "message": "Regjistrimi nuk u gjet.",
+        "error_code": "rentalDenyEntry_not_found",
+        "status": 404
+    },
     "rentalExtra_already_exists": {
         "message": "Një shtesë tjetër e përdor tashmë këtë emër.",
         "error_code": "rentalExtra_already_exists",
@@ -34,6 +54,16 @@
         "error_code": "rentalLocation_not_found",
         "status": 404
     },
+    "rentalPromoCode_already_exists": {
+        "message": "Një kod tjetër promocional e përdor tashmë këtë kod.",
+        "error_code": "rentalPromoCode_already_exists",
+        "status": 409
+    },
+    "rentalPromoCode_not_found": {
+        "message": "Kodi promocional nuk u gjet.",
+        "error_code": "rentalPromoCode_not_found",
+        "status": 404
+    },
     "rentalReservation_already_exists": {
         "message": "Ky rezervim është bërë tashmë. Rifreskoni për ta parë.",
         "error_code": "rentalReservation_already_exists",
@@ -44,14 +74,89 @@
         "error_code": "rentalReservation_not_found",
         "status": 404
     },
+    "rentalReview_already_exists": {
+        "message": "Një regjistrim tjetër i përdor tashmë këto të dhëna.",
+        "error_code": "rentalReview_already_exists",
+        "status": 409
+    },
+    "rentalReview_not_found": {
+        "message": "Regjistrimi nuk u gjet.",
+        "error_code": "rentalReview_not_found",
+        "status": 404
+    },
+    "rentalSubscription_already_exists": {
+        "message": "Një regjistrim tjetër i përdor tashmë këto të dhëna.",
+        "error_code": "rentalSubscription_already_exists",
+        "status": 409
+    },
+    "rentalSubscription_not_found": {
+        "message": "Regjistrimi nuk u gjet.",
+        "error_code": "rentalSubscription_not_found",
+        "status": 404
+    },
+    "rental_card_charge_failed": {
+        "message": "Karta e ruajtur e klientit nuk u faturua dot. Kërkoni një mënyrë tjetër pagese.",
+        "error_code": "rental_card_charge_failed"
+    },
     "rental_category_unavailable": {
         "message": "Asnjë makinë në këtë kategori nuk është e lirë për atë kohë. Provoni data të tjera ose një kategori tjetër.",
         "error_code": "rental_category_unavailable",
         "status": 409
     },
+    "rental_cross_border_not_allowed": {
+        "message": "Kjo kategori nuk mund të dalë nga vendi.",
+        "error_code": "rental_cross_border_not_allowed",
+        "status": 400
+    },
     "rental_currency_not_configured": {
         "message": "Shtoni një monedhë para se të konfiguroni qiranë e makinave.",
         "error_code": "rental_currency_not_configured"
+    },
+    "rental_customer_denied": {
+        "message": "Ky klient nuk lejohet të marrë me qira.",
+        "error_code": "rental_customer_denied",
+        "status": 403
+    },
+    "rental_deny_needs_identifier": {
+        "message": "Jepni një email ose një numër patente.",
+        "error_code": "rental_deny_needs_identifier",
+        "status": 400
+    },
+    "rental_deposit_already_taken": {
+        "message": "Për këtë rezervim është marrë tashmë një depozitë.",
+        "error_code": "rental_deposit_already_taken"
+    },
+    "rental_deposit_amount_required": {
+        "message": "Shkruani shumën e depozitës.",
+        "error_code": "rental_deposit_amount_required"
+    },
+    "rental_deposit_keep_too_high": {
+        "message": "Mund të mbani më së shumti {} të mbajtura.",
+        "error_code": "rental_deposit_keep_too_high"
+    },
+    "rental_deposit_not_held": {
+        "message": "Nuk ka depozitë të mbajtur për këtë rezervim.",
+        "error_code": "rental_deposit_not_held"
+    },
+    "rental_driver_birth_date_invalid": {
+        "message": "Data e lindjes së {} është pas ditës së marrjes.",
+        "error_code": "rental_driver_birth_date_invalid"
+    },
+    "rental_driver_license_expired": {
+        "message": "Patenta e {} skadon para ditës së kthimit.",
+        "error_code": "rental_driver_license_expired"
+    },
+    "rental_driver_license_missing": {
+        "message": "Shtoni numrin e patentës së {} para se të dorëzoni makinën.",
+        "error_code": "rental_driver_license_missing"
+    },
+    "rental_driver_primary_required": {
+        "message": "Shtoni saktësisht një shofer kryesor.",
+        "error_code": "rental_driver_primary_required"
+    },
+    "rental_driver_too_young": {
+        "message": "{} është nën {} vjeç, mosha minimale për këtë kategori.",
+        "error_code": "rental_driver_too_young"
     },
     "rental_duration_too_long": {
         "message": "Një qira mund të zgjasë të shumtën {} ditë.",
@@ -60,6 +165,11 @@
     "rental_duration_too_short": {
         "message": "Një qira duhet të zgjasë të paktën {} orë.",
         "error_code": "rental_duration_too_short"
+    },
+    "rental_extend_not_open": {
+        "message": "Ky rezervim nuk mund të ndryshohet online.",
+        "error_code": "rental_extend_not_open",
+        "status": 400
     },
     "rental_extra_name_taken": {
         "message": "Një shtesë tjetër e ka tashmë këtë emër.",
@@ -74,6 +184,14 @@
     "rental_extra_quantity_exceeded": {
         "message": "Mund të shtoni të shumtën {} nga {}.",
         "error_code": "rental_extra_quantity_exceeded"
+    },
+    "rental_fine_already_charged": {
+        "message": "Kjo gjobë i është faturuar tashmë klientit.",
+        "error_code": "rental_fine_already_charged"
+    },
+    "rental_fine_no_booking": {
+        "message": "Asnjë rezervim nuk e kishte këtë makinë në kohën e shkeljes, ndaj nuk ka klient për të faturuar.",
+        "error_code": "rental_fine_no_booking"
     },
     "rental_guest_booking_disabled": {
         "message": "Ju lutemi hyni për të rezervuar.",
@@ -127,10 +245,24 @@
         "error_code": "rental_location_not_found",
         "status": 404
     },
+    "rental_media_not_found": {
+        "message": "Një foto ose skedar nuk u gjet. Ngarkojeni përsëri.",
+        "error_code": "rental_media_not_found"
+    },
     "rental_no_show_too_early": {
         "message": "Mosparaqitja mund të regjistrohet vetëm pasi të ketë kaluar ora e marrjes.",
         "error_code": "rental_no_show_too_early",
         "status": 409
+    },
+    "rental_nothing_to_pay": {
+        "message": "Nuk ka mbetur asgjë për të paguar.",
+        "error_code": "rental_nothing_to_pay",
+        "status": 400
+    },
+    "rental_on_account_needs_account": {
+        "message": "Zgjidhni një llogari biznesi për të paguar në llogari.",
+        "error_code": "rental_on_account_needs_account",
+        "status": 400
     },
     "rental_online_payment_unavailable": {
         "message": "Pagesa online nuk është e disponueshme për këtë rezervim.",
@@ -153,6 +285,22 @@
         "error_code": "rental_price_changed",
         "status": 409
     },
+    "rental_promo_code_invalid": {
+        "message": "Ky kod promocional nuk është i vlefshëm.",
+        "error_code": "rental_promo_code_invalid"
+    },
+    "rental_promo_code_not_applicable": {
+        "message": "Ky kod promocional nuk vlen për këtë rezervim.",
+        "error_code": "rental_promo_code_not_applicable"
+    },
+    "rental_promo_code_used_up": {
+        "message": "Ky kod promocional është përdorur tashmë aq herë sa lejohet.",
+        "error_code": "rental_promo_code_used_up"
+    },
+    "rental_protection_one_only": {
+        "message": "Zgjidhni më së shumti një paketë mbrojtjeje.",
+        "error_code": "rental_protection_one_only"
+    },
     "rental_reservation_invalid_status": {
         "message": "Kjo nuk mund të bëhet në gjendjen aktuale të rezervimit.",
         "error_code": "rental_reservation_invalid_status",
@@ -166,6 +314,11 @@
     "rental_return_before_pickup": {
         "message": "Kthimi duhet të jetë pas marrjes.",
         "error_code": "rental_return_before_pickup"
+    },
+    "rental_review_not_open": {
+        "message": "Një vlerësim mund të lihet pasi makina është kthyer.",
+        "error_code": "rental_review_not_open",
+        "status": 400
     },
     "rental_season_end_before_start": {
         "message": "Një sezon duhet të mbarojë në datën e fillimit ose pas saj.",
@@ -182,6 +335,14 @@
     "rental_terms_not_accepted": {
         "message": "Ju lutemi pranoni kushtet e qirasë për të rezervuar.",
         "error_code": "rental_terms_not_accepted"
+    },
+    "rental_transfer_invalid_status": {
+        "message": "Ky transferim nuk mund të ndryshohet më kështu.",
+        "error_code": "rental_transfer_invalid_status"
+    },
+    "rental_transfer_same_location": {
+        "message": "Zgjidhni dy vendndodhje të ndryshme.",
+        "error_code": "rental_transfer_same_location"
     },
     "rental_vehicle_wrong_category": {
         "message": "Mjeti nuk i përket kategorisë së rezervuar.",
@@ -222,6 +383,16 @@
         "error_code": "vehicleDocument_not_found",
         "status": 404
     },
+    "vehicleFine_already_exists": {
+        "message": "Kjo gjobë ekziston tashmë.",
+        "error_code": "vehicleFine_already_exists",
+        "status": 409
+    },
+    "vehicleFine_not_found": {
+        "message": "Gjoba nuk u gjet.",
+        "error_code": "vehicleFine_not_found",
+        "status": 404
+    },
     "vehicleInsurance_already_exists": {
         "message": "Kjo policë sigurimi ekziston tashmë.",
         "error_code": "vehicleInsurance_already_exists",
@@ -240,6 +411,16 @@
     "vehicleMaintenance_not_found": {
         "message": "Regjistrimi i servisit nuk u gjet.",
         "error_code": "vehicleMaintenance_not_found",
+        "status": 404
+    },
+    "vehicleTransfer_already_exists": {
+        "message": "Ky transferim ekziston tashmë.",
+        "error_code": "vehicleTransfer_already_exists",
+        "status": 409
+    },
+    "vehicleTransfer_not_found": {
+        "message": "Transferimi nuk u gjet.",
+        "error_code": "vehicleTransfer_not_found",
         "status": 404
     },
     "vehicle_already_exists": {
@@ -261,6 +442,18 @@
         "message": "Një kategori tjetër mjeti e përdor tashmë këtë slug.",
         "error_code": "vehicle_category_slug_taken",
         "status": 409
+    },
+    "vehicle_damage_already_charged": {
+        "message": "Ky dëmtim është faturuar tashmë.",
+        "error_code": "vehicle_damage_already_charged"
+    },
+    "vehicle_damage_excess_reached": {
+        "message": "Franshiza e klientit është shteruar tashmë nga dëmtime të tjera.",
+        "error_code": "vehicle_damage_excess_reached"
+    },
+    "vehicle_damage_no_reservation": {
+        "message": "Lidheni dëmtimin me një rezervim para se ta faturoni.",
+        "error_code": "vehicle_damage_no_reservation"
     },
     "vehicle_damage_reservation_mismatch": {
         "message": "Ky rezervim është për një automjet tjetër. Zgjidhni një rezervim të makinës së dëmtuar.",

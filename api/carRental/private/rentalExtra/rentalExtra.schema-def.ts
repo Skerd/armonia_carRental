@@ -3,17 +3,26 @@ import type {InferCreateForm, InferEditForm} from "../../../../../core/helpers/s
 export const RENTAL_EXTRA_PRICINGS = ["per_day", "per_rental"] as const;
 export type RentalExtraPricing = (typeof RENTAL_EXTRA_PRICINGS)[number];
 
+/** A protection package lowers what the customer pays for damage; a booking takes at most one. */
+export const RENTAL_EXTRA_KINDS = ["extra", "protection"] as const;
+export type RentalExtraKind = (typeof RENTAL_EXTRA_KINDS)[number];
+
 export const RENTAL_EXTRA_NAME_MAX = 128;
 export const RENTAL_EXTRA_DESCRIPTION_MAX = 1000;
 export const RENTAL_EXTRA_QUANTITY = {min: 1, max: 10} as const;
 
 export const RentalExtraSchemaDef = {
-    name:        {type: "string", required: true, min: 1, max: RENTAL_EXTRA_NAME_MAX},
-    description: {type: "string", required: false, max: RENTAL_EXTRA_DESCRIPTION_MAX},
-    pricing:     {type: "enum", required: true, options: RENTAL_EXTRA_PRICINGS},
-    price:       {type: "number", required: true, min: 0},
-    maxQuantity: {type: "number", required: true, ...RENTAL_EXTRA_QUANTITY},
-    sortOrder:   {type: "number", required: false},
+    name:          {type: "string", required: true, min: 1, max: RENTAL_EXTRA_NAME_MAX},
+    kind:          {type: "enum", required: true, options: RENTAL_EXTRA_KINDS},
+    description:   {type: "string", required: false, max: RENTAL_EXTRA_DESCRIPTION_MAX},
+    pricing:       {type: "enum", required: true, options: RENTAL_EXTRA_PRICINGS},
+    price:         {type: "number", required: true, min: 0},
+    maxQuantity:   {type: "number", required: true, ...RENTAL_EXTRA_QUANTITY},
+    /** Protection only: the most the customer pays toward damage. */
+    excessAmount:  {type: "number", required: false, min: 0},
+    /** Protection only: the deposit taken instead of the category's. */
+    depositAmount: {type: "number", required: false, min: 0},
+    sortOrder:     {type: "number", required: false},
 } as const;
 
 export type CreateRentalExtraFormType = InferCreateForm<typeof RentalExtraSchemaDef>;

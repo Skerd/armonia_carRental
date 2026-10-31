@@ -1,0 +1,23 @@
+import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
+import type {Media} from "../../../../../core/types";
+import type {VehicleSimple} from "../../../../dto/vehicle.dto";
+import type {RentalReservationSimple} from "../../../../dto/rentalReservation.dto";
+import type {VEHICLE_FINE_TYPES, VEHICLE_FINE_STATUSS} from "./vehicleFine.schema-def";
+
+export type VehicleFine = DeletedData & OwnershipData & LifeCycleData & {
+    _id: string;
+    reference: string;
+    vehicle?: VehicleSimple;
+    offenceAt: string;
+    type: (typeof VEHICLE_FINE_TYPES)[number];
+    authority: string;
+    amount: number;
+    place?: string;
+    dueDate?: string;
+    status?: (typeof VEHICLE_FINE_STATUSS)[number];
+    reservation?: RentalReservationSimple;
+    driverName?: string;
+    chargedAmount?: number;
+    attachments?: Media[];
+    notes?: string;
+};

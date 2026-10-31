@@ -16,5 +16,7 @@ export type VehicleDamage = DeletedData & OwnershipData & LifeCycleData & {
     status: (typeof VEHICLE_DAMAGE_STATUSES)[number];
     estimatedCost?: number;
     repairCost?: number;
+    chargedAmount?: number;
+    chargedAt?: string;
     repairedAt?: string;
 };

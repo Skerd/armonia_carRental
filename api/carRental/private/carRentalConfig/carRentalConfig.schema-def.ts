@@ -13,6 +13,9 @@ export const RENTAL_HOLD_MINUTES = {min: 5, max: 120} as const;
 export const RENTAL_LATE_GRACE_MINUTES = {min: 0, max: 720} as const;
 export const RENTAL_FREE_CANCELLATION_HOURS = {min: 0, max: 720} as const;
 export const RENTAL_PERCENT = {min: 0, max: 100} as const;
+export const RENTAL_YOUNG_DRIVER_AGE = {min: 18, max: 30} as const;
+/** Any single fee or charge amount. */
+export const RENTAL_FEE_AMOUNT = {min: 0, max: 100000} as const;
 export const RENTAL_TERMS_VERSION_MAX = 32;
 export const RENTAL_TERMS_TEXT_MAX = 20000;
 
@@ -36,6 +39,17 @@ export const CarRentalConfigSchemaDef = {
     termsVersion:            {type: "string", required: false, max: RENTAL_TERMS_VERSION_MAX},
     termsText:               {type: "string", required: false, max: RENTAL_TERMS_TEXT_MAX},
     notifyUsers:             {type: "objectIdArray", required: false},
+    // Fees and charges. Unset means the fee is not charged.
+    youngDriverUnderAge:      {type: "number", required: false, ...RENTAL_YOUNG_DRIVER_AGE},
+    youngDriverDailyFee:      {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
+    additionalDriverDailyFee: {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
+    oneWayFee:                {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
+    fuelPricePerQuarter:      {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
+    refuelServiceFee:         {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
+    lateFeePerHour:           {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
+    cleaningFee:              {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
+    smokingFee:               {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
+    fineAdminFee:             {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
 } as const;
 
 export type CreateCarRentalConfigFormType = InferCreateForm<typeof CarRentalConfigSchemaDef>;

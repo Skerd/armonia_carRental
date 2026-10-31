@@ -1,9 +1,9 @@
 import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 import type {WeeklyHoursSlot} from "../../../../../core/helpers/weeklyHours.schema-def";
 import type {RentalPaymentPolicy} from "../../private/carRentalConfig/carRentalConfig.schema-def";
-import type {RentalExtraPricing} from "../../private/rentalExtra/rentalExtra.schema-def";
+import type {RentalExtraKind, RentalExtraPricing} from "../../private/rentalExtra/rentalExtra.schema-def";
 import type {VEHICLE_FUEL_TYPES, VEHICLE_MILEAGE_POLICIES, VEHICLE_TRANSMISSIONS} from "../../private/vehicleCategory/vehicleCategory.schema-def";
-import type {RentalContact, RentalPricing} from "../../private/rentalReservation/rentalReservation.dto";
+import type {RentalContact, RentalDriver, RentalPricing} from "../../private/rentalReservation/rentalReservation.dto";
 import type {RentalPaymentChoice, RentalPaymentStatus, RentalReservationStatus} from "../../private/rentalReservation/rentalReservation.constants";
 
 export type RentalStorefrontLocation = {
@@ -22,10 +22,14 @@ export type RentalStorefrontLocation = {
 export type RentalStorefrontExtra = {
     _id: string;
     name: string;
+    kind: RentalExtraKind;
     description?: string;
     pricing: RentalExtraPricing;
     price: number;
     maxQuantity: number;
+    /** Protection only. */
+    excessAmount?: number;
+    depositAmount?: number;
 };
 
 export type RentalStorefrontCategory = {
@@ -47,6 +51,8 @@ export type RentalStorefrontCategory = {
     includedKmPerDay?: number;
     extraKmPrice?: number;
     minDriverAge?: number;
+    crossBorderAllowed: boolean;
+    crossBorderFee?: number;
 };
 
 /** Everything the public site needs to render before the first search. */
@@ -104,13 +110,31 @@ export type PublicRentalReservation = {
     holdExpiresAt?: string;
     contact: RentalContact;
     pricing: RentalQuote;
-    extras: {name: string; quantity: number; total: number}[];
+    extras: {extraId: string; name: string; quantity: number; total: number}[];
     paymentChoice: RentalPaymentChoice;
     paymentStatus: RentalPaymentStatus;
     amountPaid: number;
+    amountDue: number;
     freeCancellationUntil: string;
     cancellationFeePercent: number;
     canCancel: boolean;
+    canExtend: boolean;
+    canAddExtras: boolean;
+    canPayBalance: boolean;
+    canUploadDocuments: boolean;
+    canReview: boolean;
+    hasAgreement: boolean;
+    crossBorder: boolean;
+    driver?: {
+        licenseNumber?: string;
+        licenseCountry?: string;
+        licenseIssuedAt?: string;
+        licenseExpiresAt?: string;
+        idDocumentType?: RentalDriver["idDocumentType"];
+        idDocumentNumber?: string;
+        documents: number;
+    };
+    invoices: {id: string; number: string; total: number}[];
 };
 
 export type RentalBookingResponse = {
@@ -124,6 +148,12 @@ export type RentalBookingResponse = {
 };
 
 export type PublicRentalReservationResponse = {data: PublicRentalReservation};
+
+/** A manage-page change, with a card form when the customer chose to pay the difference now. */
+export type PublicRentalChangeResponse = {
+    data: PublicRentalReservation;
+    payment?: {clientSecret: string; publishableKey: string};
+};
 
 /** A portal account's reservations across rental companies, each with its company and manage link token. */
 export type RentalMyReservationsResponse = {

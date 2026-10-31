@@ -14,6 +14,26 @@
         "error_code": "car_rental_not_configured",
         "status": 404
     },
+    "rentalBusinessAccount_already_exists": {
+        "message": "Un altro record usa già questi dati.",
+        "error_code": "rentalBusinessAccount_already_exists",
+        "status": 409
+    },
+    "rentalBusinessAccount_not_found": {
+        "message": "Il record non è stato trovato.",
+        "error_code": "rentalBusinessAccount_not_found",
+        "status": 404
+    },
+    "rentalDenyEntry_already_exists": {
+        "message": "Un altro record usa già questi dati.",
+        "error_code": "rentalDenyEntry_already_exists",
+        "status": 409
+    },
+    "rentalDenyEntry_not_found": {
+        "message": "Il record non è stato trovato.",
+        "error_code": "rentalDenyEntry_not_found",
+        "status": 404
+    },
     "rentalExtra_already_exists": {
         "message": "Un altro extra usa già questo nome.",
         "error_code": "rentalExtra_already_exists",
@@ -34,6 +54,16 @@
         "error_code": "rentalLocation_not_found",
         "status": 404
     },
+    "rentalPromoCode_already_exists": {
+        "message": "Un altro codice promozionale usa già questo codice.",
+        "error_code": "rentalPromoCode_already_exists",
+        "status": 409
+    },
+    "rentalPromoCode_not_found": {
+        "message": "Il codice promozionale non è stato trovato.",
+        "error_code": "rentalPromoCode_not_found",
+        "status": 404
+    },
     "rentalReservation_already_exists": {
         "message": "Questa prenotazione è già stata fatta. Aggiorna per vederla.",
         "error_code": "rentalReservation_already_exists",
@@ -44,14 +74,89 @@
         "error_code": "rentalReservation_not_found",
         "status": 404
     },
+    "rentalReview_already_exists": {
+        "message": "Un altro record usa già questi dati.",
+        "error_code": "rentalReview_already_exists",
+        "status": 409
+    },
+    "rentalReview_not_found": {
+        "message": "Il record non è stato trovato.",
+        "error_code": "rentalReview_not_found",
+        "status": 404
+    },
+    "rentalSubscription_already_exists": {
+        "message": "Un altro record usa già questi dati.",
+        "error_code": "rentalSubscription_already_exists",
+        "status": 409
+    },
+    "rentalSubscription_not_found": {
+        "message": "Il record non è stato trovato.",
+        "error_code": "rentalSubscription_not_found",
+        "status": 404
+    },
+    "rental_card_charge_failed": {
+        "message": "Non è stato possibile addebitare la carta salvata del cliente. Chiedi un altro metodo di pagamento.",
+        "error_code": "rental_card_charge_failed"
+    },
     "rental_category_unavailable": {
         "message": "Nessuna auto di questa categoria è libera in quel periodo. Prova altre date o un'altra categoria.",
         "error_code": "rental_category_unavailable",
         "status": 409
     },
+    "rental_cross_border_not_allowed": {
+        "message": "Questa categoria non può uscire dal paese.",
+        "error_code": "rental_cross_border_not_allowed",
+        "status": 400
+    },
     "rental_currency_not_configured": {
         "message": "Aggiungi una valuta prima di configurare il noleggio auto.",
         "error_code": "rental_currency_not_configured"
+    },
+    "rental_customer_denied": {
+        "message": "Questo cliente non è autorizzato a noleggiare.",
+        "error_code": "rental_customer_denied",
+        "status": 403
+    },
+    "rental_deny_needs_identifier": {
+        "message": "Indica un'email o un numero di patente.",
+        "error_code": "rental_deny_needs_identifier",
+        "status": 400
+    },
+    "rental_deposit_already_taken": {
+        "message": "Per questa prenotazione è già stato preso un deposito.",
+        "error_code": "rental_deposit_already_taken"
+    },
+    "rental_deposit_amount_required": {
+        "message": "Inserisci l'importo del deposito.",
+        "error_code": "rental_deposit_amount_required"
+    },
+    "rental_deposit_keep_too_high": {
+        "message": "Puoi trattenere al massimo i {} trattenuti.",
+        "error_code": "rental_deposit_keep_too_high"
+    },
+    "rental_deposit_not_held": {
+        "message": "Per questa prenotazione non è trattenuto alcun deposito.",
+        "error_code": "rental_deposit_not_held"
+    },
+    "rental_driver_birth_date_invalid": {
+        "message": "La data di nascita di {} è successiva al giorno del ritiro.",
+        "error_code": "rental_driver_birth_date_invalid"
+    },
+    "rental_driver_license_expired": {
+        "message": "La patente di {} scade prima del giorno di riconsegna.",
+        "error_code": "rental_driver_license_expired"
+    },
+    "rental_driver_license_missing": {
+        "message": "Inserisci il numero di patente di {} prima di consegnare il veicolo.",
+        "error_code": "rental_driver_license_missing"
+    },
+    "rental_driver_primary_required": {
+        "message": "Indica esattamente un conducente principale.",
+        "error_code": "rental_driver_primary_required"
+    },
+    "rental_driver_too_young": {
+        "message": "{} ha meno di {} anni, l'età minima per questa categoria.",
+        "error_code": "rental_driver_too_young"
     },
     "rental_duration_too_long": {
         "message": "Un noleggio può durare al massimo {} giorni.",
@@ -60,6 +165,11 @@
     "rental_duration_too_short": {
         "message": "Un noleggio deve durare almeno {} ore.",
         "error_code": "rental_duration_too_short"
+    },
+    "rental_extend_not_open": {
+        "message": "Questa prenotazione non può essere modificata online.",
+        "error_code": "rental_extend_not_open",
+        "status": 400
     },
     "rental_extra_name_taken": {
         "message": "Un altro extra ha già questo nome.",
@@ -74,6 +184,14 @@
     "rental_extra_quantity_exceeded": {
         "message": "Puoi aggiungere al massimo {} di {}.",
         "error_code": "rental_extra_quantity_exceeded"
+    },
+    "rental_fine_already_charged": {
+        "message": "Questa multa è già stata addebitata al cliente.",
+        "error_code": "rental_fine_already_charged"
+    },
+    "rental_fine_no_booking": {
+        "message": "Nessuna prenotazione aveva questo veicolo al momento dell'infrazione, quindi non c'è un cliente da addebitare.",
+        "error_code": "rental_fine_no_booking"
     },
     "rental_guest_booking_disabled": {
         "message": "Accedi per prenotare.",
@@ -127,10 +245,24 @@
         "error_code": "rental_location_not_found",
         "status": 404
     },
+    "rental_media_not_found": {
+        "message": "Una foto o un file non è stato trovato. Caricalo di nuovo.",
+        "error_code": "rental_media_not_found"
+    },
     "rental_no_show_too_early": {
         "message": "La mancata presentazione si può registrare solo dopo l'orario di ritiro.",
         "error_code": "rental_no_show_too_early",
         "status": 409
+    },
+    "rental_nothing_to_pay": {
+        "message": "Non resta nulla da pagare.",
+        "error_code": "rental_nothing_to_pay",
+        "status": 400
+    },
+    "rental_on_account_needs_account": {
+        "message": "Scegli un conto aziendale per pagare a conto.",
+        "error_code": "rental_on_account_needs_account",
+        "status": 400
     },
     "rental_online_payment_unavailable": {
         "message": "Il pagamento online non è disponibile per questa prenotazione.",
@@ -153,6 +285,22 @@
         "error_code": "rental_price_changed",
         "status": 409
     },
+    "rental_promo_code_invalid": {
+        "message": "Questo codice promozionale non è valido.",
+        "error_code": "rental_promo_code_invalid"
+    },
+    "rental_promo_code_not_applicable": {
+        "message": "Questo codice promozionale non vale per questa prenotazione.",
+        "error_code": "rental_promo_code_not_applicable"
+    },
+    "rental_promo_code_used_up": {
+        "message": "Questo codice promozionale è già stato usato tutte le volte consentite.",
+        "error_code": "rental_promo_code_used_up"
+    },
+    "rental_protection_one_only": {
+        "message": "Scegli al massimo un pacchetto di protezione.",
+        "error_code": "rental_protection_one_only"
+    },
     "rental_reservation_invalid_status": {
         "message": "Non è possibile nello stato attuale della prenotazione.",
         "error_code": "rental_reservation_invalid_status",
@@ -166,6 +314,11 @@
     "rental_return_before_pickup": {
         "message": "La riconsegna deve essere successiva al ritiro.",
         "error_code": "rental_return_before_pickup"
+    },
+    "rental_review_not_open": {
+        "message": "Una recensione si può lasciare dopo la riconsegna.",
+        "error_code": "rental_review_not_open",
+        "status": 400
     },
     "rental_season_end_before_start": {
         "message": "Una stagione deve terminare alla data di inizio o dopo.",
@@ -182,6 +335,14 @@
     "rental_terms_not_accepted": {
         "message": "Accetta le condizioni di noleggio per prenotare.",
         "error_code": "rental_terms_not_accepted"
+    },
+    "rental_transfer_invalid_status": {
+        "message": "Questo trasferimento non si può più modificare così.",
+        "error_code": "rental_transfer_invalid_status"
+    },
+    "rental_transfer_same_location": {
+        "message": "Scegli due sedi diverse.",
+        "error_code": "rental_transfer_same_location"
     },
     "rental_vehicle_wrong_category": {
         "message": "Il veicolo non appartiene alla categoria prenotata.",
@@ -222,6 +383,16 @@
         "error_code": "vehicleDocument_not_found",
         "status": 404
     },
+    "vehicleFine_already_exists": {
+        "message": "Questa multa esiste già.",
+        "error_code": "vehicleFine_already_exists",
+        "status": 409
+    },
+    "vehicleFine_not_found": {
+        "message": "La multa non è stata trovata.",
+        "error_code": "vehicleFine_not_found",
+        "status": 404
+    },
     "vehicleInsurance_already_exists": {
         "message": "Questa polizza assicurativa esiste già.",
         "error_code": "vehicleInsurance_already_exists",
@@ -240,6 +411,16 @@
     "vehicleMaintenance_not_found": {
         "message": "L'intervento di manutenzione non è stato trovato.",
         "error_code": "vehicleMaintenance_not_found",
+        "status": 404
+    },
+    "vehicleTransfer_already_exists": {
+        "message": "Questo trasferimento esiste già.",
+        "error_code": "vehicleTransfer_already_exists",
+        "status": 409
+    },
+    "vehicleTransfer_not_found": {
+        "message": "Il trasferimento non è stato trovato.",
+        "error_code": "vehicleTransfer_not_found",
         "status": 404
     },
     "vehicle_already_exists": {
@@ -261,6 +442,18 @@
         "message": "Un'altra categoria di veicolo usa già questo slug.",
         "error_code": "vehicle_category_slug_taken",
         "status": 409
+    },
+    "vehicle_damage_already_charged": {
+        "message": "Questo danno è già stato addebitato.",
+        "error_code": "vehicle_damage_already_charged"
+    },
+    "vehicle_damage_excess_reached": {
+        "message": "La franchigia del cliente è già esaurita da altri danni addebitati.",
+        "error_code": "vehicle_damage_excess_reached"
+    },
+    "vehicle_damage_no_reservation": {
+        "message": "Collega il danno a una prenotazione prima di addebitarlo.",
+        "error_code": "vehicle_damage_no_reservation"
     },
     "vehicle_damage_reservation_mismatch": {
         "message": "Questa prenotazione riguarda un altro veicolo. Scegli una prenotazione dell'auto danneggiata.",

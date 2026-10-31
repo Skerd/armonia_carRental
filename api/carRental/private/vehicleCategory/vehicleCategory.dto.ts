@@ -24,6 +24,8 @@ export type VehicleCategory = DeletedData & OwnershipData & LifeCycleData & {
     includedKmPerDay?: number;
     extraKmPrice?: number;
     minDriverAge?: number;
+    crossBorderAllowed: boolean;
+    crossBorderFee?: number;
     isPublic: boolean;
     sortOrder: number;
 };

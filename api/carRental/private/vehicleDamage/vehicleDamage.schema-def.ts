@@ -23,3 +23,10 @@ export const VehicleDamageSchemaDef = {
 
 export type CreateVehicleDamageFormType = InferCreateForm<typeof VehicleDamageSchemaDef>;
 export type EditVehicleDamageFormType = InferEditForm<typeof VehicleDamageSchemaDef>;
+
+/** Charges the customer of the linked booking for this damage, up to their excess. */
+export const ChargeVehicleDamageFormDef = {
+    _id:    {type: "objectId", required: true},
+    amount: {type: "number", required: true, min: 0.01},
+} as const;
+export type ChargeVehicleDamageFormType = InferCreateForm<typeof ChargeVehicleDamageFormDef>;

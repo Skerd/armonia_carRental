@@ -43,8 +43,10 @@ export const VehicleCategorySchemaDef = {
     mileagePolicy:    {type: "enum", required: true, options: VEHICLE_MILEAGE_POLICIES},
     includedKmPerDay: {type: "number", required: false, min: 0},
     extraKmPrice:     {type: "number", required: false, min: 0},
-    minDriverAge:     {type: "number", required: false, ...VEHICLE_DRIVER_AGE},
-    isPublic:         {type: "boolean", required: false},
+    minDriverAge:        {type: "number", required: false, ...VEHICLE_DRIVER_AGE},
+    crossBorderAllowed:  {type: "boolean", required: false},
+    crossBorderFee:      {type: "number", required: false, min: 0},
+    isPublic:            {type: "boolean", required: false},
     sortOrder:        {type: "number", required: false},
 } as const;
 

@@ -36,6 +36,8 @@ export const RentalLocationSchemaDef = {
     closures:      {type: "embeddedArray", required: false, items: RentalLocationClosureDef, maxItems: RENTAL_LOCATION_CLOSURES_MAX_ITEMS},
     pickupAllowed: {type: "boolean", required: false},
     returnAllowed: {type: "boolean", required: false},
+    /** Charged when a car picked up elsewhere is returned here; empty uses the company's one-way fee. */
+    oneWayFee:     {type: "number", required: false, min: 0},
 } as const;
 
 export type CreateRentalLocationFormType = InferCreateForm<typeof RentalLocationSchemaDef>;

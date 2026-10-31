@@ -21,5 +21,6 @@ export type RentalLocation = DeletedData & OwnershipData & LifeCycleData & {
     closures: {date: string; reason?: string}[];
     pickupAllowed: boolean;
     returnAllowed: boolean;
+    oneWayFee?: number;
     isActive: boolean;
 };

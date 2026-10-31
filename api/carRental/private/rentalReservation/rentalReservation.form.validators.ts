@@ -4,9 +4,13 @@ import {
     CreateRentalReservationFormDef,
     ExtendRentalReservationFormDef,
     HandoverRentalReservationFormDef,
+    PreviewReturnChargesFormDef,
     ReassignRentalVehicleFormDef,
     RecordRentalPaymentFormDef,
     ReturnRentalReservationFormDef,
+    SaveRentalDriversFormDef,
+    SettleRentalDepositFormDef,
+    TakeRentalDepositFormDef,
 } from "./rentalReservation.schema-def";
 
 export function createRentalReservationFormSchema(languageCode: string, form: any = null) {
@@ -35,4 +39,20 @@ export function reassignRentalVehicleFormSchema(languageCode: string, form: any 
 
 export function extendRentalReservationFormSchema(languageCode: string, form: any = null) {
     return buildCreateZodSchema(ExtendRentalReservationFormDef, languageCode, form);
+}
+
+export function saveRentalDriversFormSchema(languageCode: string, form: any = null) {
+    return buildCreateZodSchema(SaveRentalDriversFormDef, languageCode, form);
+}
+
+export function previewReturnChargesFormSchema(languageCode: string, form: any = null) {
+    return buildCreateZodSchema(PreviewReturnChargesFormDef, languageCode, form);
+}
+
+export function takeRentalDepositFormSchema(languageCode: string, form: any = null) {
+    return buildCreateZodSchema(TakeRentalDepositFormDef, languageCode, form);
+}
+
+export function settleRentalDepositFormSchema(languageCode: string, form: any = null) {
+    return buildCreateZodSchema(SettleRentalDepositFormDef, languageCode, form);
 }

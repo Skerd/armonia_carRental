@@ -1,5 +1,15 @@
 import type {InferCreateForm, InferEditForm} from "../../../../../core/helpers/schemaDefBuilder";
 
+/** Whether a car can go out again: set to `needs_cleaning` at every return, back to `ready` by staff. */
+export const VEHICLE_READINESS = ["ready", "needs_cleaning", "needs_check"] as const;
+export type VehicleReadiness = (typeof VEHICLE_READINESS)[number];
+
+/** Changes a car's readiness from the fleet planner or the car's menu. */
+export const SetVehicleReadinessFormDef = {
+    _id:       {type: "objectId", required: true},
+    readiness: {type: "enum", required: true, options: VEHICLE_READINESS},
+} as const;
+
 /** `retired` replaces deletion once a vehicle has history; only `active` vehicles are rented out. */
 export const VEHICLE_STATUSES = ["active", "maintenance", "retired"] as const;
 export type VehicleStatus = (typeof VEHICLE_STATUSES)[number];
@@ -34,7 +44,13 @@ export const VehicleSchemaDef = {
     videos:        {type: "mediaIdArray", required: false},
     acquiredAt:    {type: "date", required: false},
     purchasePrice: {type: "number", required: false, min: 0},
+    trackerId:     {type: "string", required: false, max: 64},
+    lastLatitude:  {type: "number", required: false, min: -90, max: 90},
+    lastLongitude: {type: "number", required: false, min: -180, max: 180},
+    lastReportedAt:{type: "date", required: false},
 } as const;
 
 export type CreateVehicleFormType = InferCreateForm<typeof VehicleSchemaDef>;
 export type EditVehicleFormType = InferEditForm<typeof VehicleSchemaDef>;
+
+export type SetVehicleReadinessFormType = InferCreateForm<typeof SetVehicleReadinessFormDef>;

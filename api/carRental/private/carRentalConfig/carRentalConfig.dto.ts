@@ -24,4 +24,14 @@ export type CarRentalConfig = DeletedData & OwnershipData & LifeCycleData & {
     termsVersion?: string;
     termsText?: string;
     notifyUsers?: SimpleBlankUser[];
+    youngDriverUnderAge?: number;
+    youngDriverDailyFee?: number;
+    additionalDriverDailyFee?: number;
+    oneWayFee?: number;
+    fuelPricePerQuarter?: number;
+    refuelServiceFee?: number;
+    lateFeePerHour?: number;
+    cleaningFee?: number;
+    smokingFee?: number;
+    fineAdminFee?: number;
 };

@@ -1,6 +1,7 @@
 import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
 import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 import type {SimpleBlankUser} from "../../../../../core/dto/user.dto";
+import type {Media} from "../../../../../core/types";
 import type {VehicleCategorySimple} from "../../../../dto/vehicleCategory.dto";
 import type {VehicleSimple} from "../../../../dto/vehicle.dto";
 import type {RentalLocationSimple} from "../../../../dto/rentalLocation.dto";
@@ -9,7 +10,12 @@ import type {RentalExtraPricing} from "../rentalExtra/rentalExtra.schema-def";
 import type {
     RENTAL_CANCELLED_BY,
     RENTAL_FUEL_LEVELS,
+    RENTAL_ID_DOCUMENT_TYPES,
     RENTAL_RESERVATION_SOURCES,
+    RentalDepositMethod,
+    RentalDepositStatus,
+    RentalDriverRole,
+    RentalPriceLineCode,
     RentalPaymentChoice,
     RentalPaymentStatus,
     RentalPriceLineKind,
@@ -20,6 +26,7 @@ import type {
 export type RentalPriceLine = {
     label: string;
     kind: RentalPriceLineKind;
+    code?: RentalPriceLineCode;
     quantity: number;
     unitPrice: number;
     total: number;
@@ -45,6 +52,46 @@ export type RentalContact = {
     phone: string;
 };
 
+export type RentalDeposit = {
+    method: RentalDepositMethod;
+    status: RentalDepositStatus;
+    amount: number;
+    capturedAmount: number;
+    /** A card is saved for later charges (fines, damage found later). */
+    hasSavedCard: boolean;
+    heldAt?: string;
+    settledAt?: string;
+};
+
+/** The deposit after a staff action, with the card form's secret while the customer still has to confirm it. */
+export type RentalDepositResponse = {
+    reservation: RentalReservation;
+    payment?: {kind: "payment" | "setup"; clientSecret: string; publishableKey: string};
+};
+
+export type RentalVehicleCheck = {
+    at: string;
+    by?: SimpleBlankUser;
+    odometerKm: number;
+    fuelLevel: (typeof RENTAL_FUEL_LEVELS)[number];
+    notes?: string;
+    photos?: Media[];
+};
+
+/** Dates are local calendar dates (`YYYY-MM-DD`). */
+export type RentalDriver = {
+    role: RentalDriverRole;
+    firstName: string;
+    lastName: string;
+    birthDate: string;
+    licenseNumber?: string;
+    licenseCountry?: string;
+    licenseIssuedAt?: string;
+    licenseExpiresAt?: string;
+    idDocumentType?: (typeof RENTAL_ID_DOCUMENT_TYPES)[number];
+    idDocumentNumber?: string;
+};
+
 export type RentalReservation = DeletedData & OwnershipData & LifeCycleData & {
     _id: string;
     number: string;
@@ -59,6 +106,8 @@ export type RentalReservation = DeletedData & OwnershipData & LifeCycleData & {
     holdExpiresAt?: string;
     customer?: SimpleBlankUser;
     contact: RentalContact;
+    drivers: RentalDriver[];
+    promoCode?: {code: string};
     extras: {extra?: RentalExtraSimple; name: string; pricing: RentalExtraPricing; unitPrice: number; quantity: number; total: number}[];
     pricing: RentalPricing;
     snapshot: {
@@ -82,10 +131,23 @@ export type RentalReservation = DeletedData & OwnershipData & LifeCycleData & {
     paymentStatus: RentalPaymentStatus;
     amountPaid: number;
     notes?: string;
-    handover?: {at: string; by?: SimpleBlankUser; odometerKm: number; fuelLevel: (typeof RENTAL_FUEL_LEVELS)[number]; notes?: string};
-    returnInfo?: {at: string; by?: SimpleBlankUser; odometerKm: number; fuelLevel: (typeof RENTAL_FUEL_LEVELS)[number]; notes?: string; damageNoted: boolean};
+    handover?: RentalVehicleCheck & {acknowledgedDamages: string[]};
+    returnInfo?: RentalVehicleCheck & {damageNoted: boolean};
+    deposit?: RentalDeposit;
+    needsTransfer: boolean;
+    /** Made at handover; the PDF is generated on request from this and the booking. */
+    agreement?: {signedAt?: string; signerName?: string; signature?: Media; termsVersion?: string};
     timeline: {event: RentalTimelineEvent; at: string; note?: string}[];
     cancelledAt?: string;
     cancelledBy?: (typeof RENTAL_CANCELLED_BY)[number];
     cancellationReason?: string;
 };
+
+/** Charges a return would add: worked out from the readings, or offered as presets. */
+export type RentalReturnChargesPreview = {
+    suggested: {code: RentalPriceLineCode; label: string; amount: number}[];
+    presets: {code: RentalPriceLineCode; label: string; amount: number}[];
+};
+
+/** A damage report of the car, shown at handover for the customer to acknowledge. */
+export type RentalOpenDamage = {_id: string; area: string; severity: string; description: string; photos?: Media[]};
