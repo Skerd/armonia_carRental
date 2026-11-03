@@ -2,6 +2,7 @@ import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../cor
 import type {Media} from "../../../../../core/types";
 import type {VehicleSimple} from "../../../../dto/vehicle.dto";
 import type {RentalReservationSimple} from "../../../../dto/rentalReservation.dto";
+import type {VehicleTransferSimple} from "../../../../dto/vehicleTransfer.dto";
 import type {VEHICLE_FINE_TYPES, VEHICLE_FINE_STATUSS} from "./vehicleFine.schema-def";
 
 export type VehicleFine = DeletedData & OwnershipData & LifeCycleData & {
@@ -18,6 +19,11 @@ export type VehicleFine = DeletedData & OwnershipData & LifeCycleData & {
     reservation?: RentalReservationSimple;
     driverName?: string;
     chargedAmount?: number;
+    /** The staff transfer that had the car at the time, when no booking did. */
+    transfer?: VehicleTransferSimple;
+    paidAt?: string;
+    paidAmount?: number;
+    paymentReference?: string;
     attachments?: Media[];
     notes?: string;
 };

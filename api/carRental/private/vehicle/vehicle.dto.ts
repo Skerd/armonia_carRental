@@ -31,3 +31,7 @@ export type Vehicle = DeletedData & OwnershipData & LifeCycleData & {
     nextServiceDueAt?: string;
     nextServiceDueKm?: number;
 };
+
+export type SetVehicleReadinessResult = {
+    readiness: VehicleReadiness;
+};

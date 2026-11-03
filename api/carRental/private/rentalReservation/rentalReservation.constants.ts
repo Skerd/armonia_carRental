@@ -51,6 +51,7 @@ export const RENTAL_TIMELINE_EVENTS = [
     "extended",
     "returned",
     "charge_added",
+    "charge_removed",
     "deposit_held",
     "deposit_captured",
     "deposit_released",

@@ -1,6 +1,7 @@
 import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
 import type {Media} from "../../../../../core/types";
 import type {VehicleSimple} from "../../../../dto/vehicle.dto";
+import type {VehicleInsuranceSimple} from "../../../../dto/vehicleInsurance.dto";
 import type {VEHICLE_INSURANCE_COVERAGES, VEHICLE_INSURANCE_STATUSES} from "./vehicleInsurance.schema-def";
 
 export type VehicleInsurance = DeletedData & OwnershipData & LifeCycleData & {
@@ -16,4 +17,6 @@ export type VehicleInsurance = DeletedData & OwnershipData & LifeCycleData & {
     status: (typeof VEHICLE_INSURANCE_STATUSES)[number];
     attachments?: Media[];
     notes?: string;
+    supersedes?: VehicleInsuranceSimple;
+    supersededBy?: VehicleInsuranceSimple;
 };

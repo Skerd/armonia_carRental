@@ -103,6 +103,10 @@
         "error_code": "rental_category_unavailable",
         "status": 409
     },
+    "rental_charge_not_found": {
+        "message": "Diese Belastung ist nicht mehr auf der Buchung oder ihrer Rechnung.",
+        "error_code": "rental_charge_not_found"
+    },
     "rental_cross_border_not_allowed": {
         "message": "Diese Kategorie darf das Land nicht verlassen.",
         "error_code": "rental_cross_border_not_allowed",
@@ -185,9 +189,13 @@
         "message": "Sie können höchstens {} von {} hinzufügen.",
         "error_code": "rental_extra_quantity_exceeded"
     },
-    "rental_fine_already_charged": {
-        "message": "Diese Busse wurde der Kundschaft bereits belastet.",
-        "error_code": "rental_fine_already_charged"
+    "rental_fine_already_paid": {
+        "message": "Die Zahlung dieser Busse wurde bereits erfasst.",
+        "error_code": "rental_fine_already_paid"
+    },
+    "rental_fine_invalid_status": {
+        "message": "Dieser Schritt ist im aktuellen Status der Busse nicht möglich.",
+        "error_code": "rental_fine_invalid_status"
     },
     "rental_fine_no_booking": {
         "message": "Zur Tatzeit hatte keine Buchung dieses Fahrzeug, daher gibt es keine Kundschaft zu belasten.",
@@ -344,6 +352,10 @@
         "message": "Wählen Sie zwei verschiedene Standorte.",
         "error_code": "rental_transfer_same_location"
     },
+    "rental_vehicle_papers_expired": {
+        "message": "Die Versicherung oder Fahrzeugpapiere von {} laufen vor der Rückgabe ab. Erneuern Sie sie oder geben Sie dem Kunden ein anderes Fahrzeug.",
+        "error_code": "rental_vehicle_papers_expired"
+    },
     "rental_vehicle_wrong_category": {
         "message": "Das Fahrzeug gehört nicht zur gebuchten Kategorie.",
         "error_code": "rental_vehicle_wrong_category"
@@ -398,6 +410,16 @@
         "error_code": "vehicleInsurance_already_exists",
         "status": 409
     },
+    "vehicleInsurance_cancelled": {
+        "message": "Diese Police ist storniert. Stellen Sie sie wieder her, bevor Sie sie ändern.",
+        "error_code": "vehicleInsurance_cancelled",
+        "status": 409
+    },
+    "vehicleInsurance_invalid_status": {
+        "message": "Diese Police lässt sich so nicht mehr ändern.",
+        "error_code": "vehicleInsurance_invalid_status",
+        "status": 409
+    },
     "vehicleInsurance_not_found": {
         "message": "Die Fahrzeugversicherung wurde nicht gefunden.",
         "error_code": "vehicleInsurance_not_found",
@@ -428,6 +450,10 @@
         "error_code": "vehicle_already_exists",
         "status": 409
     },
+    "vehicle_block_managed": {
+        "message": "Diese Sperre gehört zu einer Überführung oder einem Service. Ändern oder stornieren Sie sie dort.",
+        "error_code": "vehicle_block_managed"
+    },
     "vehicle_block_overlaps_reservation": {
         "message": "Das Fahrzeug ist in diesem Zeitraum gebucht ({}). Weisen Sie diese Reservierung zuerst neu zu.",
         "error_code": "vehicle_block_overlaps_reservation",
@@ -455,6 +481,14 @@
         "message": "Verknüpfen Sie den Schaden mit einer Buchung, bevor Sie ihn belasten.",
         "error_code": "vehicle_damage_no_reservation"
     },
+    "vehicle_damage_not_open": {
+        "message": "Nur ein offener Schaden kann zur Reparatur geschickt werden.",
+        "error_code": "vehicle_damage_not_open"
+    },
+    "vehicle_damage_policy_mismatch": {
+        "message": "Die Versicherungspolice muss zum beschädigten Fahrzeug gehören.",
+        "error_code": "vehicle_damage_policy_mismatch"
+    },
     "vehicle_damage_reservation_mismatch": {
         "message": "Diese Buchung gehört zu einem anderen Fahrzeug. Wählen Sie eine Buchung des beschädigten Autos.",
         "error_code": "vehicle_damage_reservation_mismatch",
@@ -464,6 +498,10 @@
         "message": "Dieses Fahrzeug hat {} bevorstehende Reservierung(en). Weisen Sie sie zuerst neu zu oder stornieren Sie sie.",
         "error_code": "vehicle_has_future_reservations",
         "status": 409
+    },
+    "vehicle_maintenance_not_scheduled": {
+        "message": "Nur ein geplanter Service kann abgeschlossen oder storniert werden.",
+        "error_code": "vehicle_maintenance_not_scheduled"
     },
     "vehicle_not_active": {
         "message": "Dieses Fahrzeug ist in Wartung oder ausgemustert und kann nicht vermietet werden.",
@@ -479,6 +517,18 @@
         "message": "Ein anderes Fahrzeug hat bereits dieses Kennzeichen.",
         "error_code": "vehicle_plate_taken",
         "status": 409
+    },
+    "vehicle_record_not_renewable": {
+        "message": "Dieser Eintrag kann nicht erneuert werden: Er gehört zu einem anderen Fahrzeug oder Typ oder wurde bereits erneuert.",
+        "error_code": "vehicle_record_not_renewable"
+    },
+    "vehicle_repair_date_required": {
+        "message": "Wählen Sie das Datum der Reparatur.",
+        "error_code": "vehicle_repair_date_required"
+    },
+    "vehicle_repair_not_found": {
+        "message": "Diese Reparatur ist keine geplante Reparatur dieses Fahrzeugs.",
+        "error_code": "vehicle_repair_not_found"
     },
     "vehicle_unavailable": {
         "message": "Dieses Fahrzeug ist für diesen Zeitraum bereits gebucht oder gesperrt.",

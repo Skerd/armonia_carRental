@@ -103,6 +103,10 @@
         "error_code": "rental_category_unavailable",
         "status": 409
     },
+    "rental_charge_not_found": {
+        "message": "Ky faturim nuk është më te rezervimi ose fatura e tij.",
+        "error_code": "rental_charge_not_found"
+    },
     "rental_cross_border_not_allowed": {
         "message": "Kjo kategori nuk mund të dalë nga vendi.",
         "error_code": "rental_cross_border_not_allowed",
@@ -185,9 +189,13 @@
         "message": "Mund të shtoni të shumtën {} nga {}.",
         "error_code": "rental_extra_quantity_exceeded"
     },
-    "rental_fine_already_charged": {
-        "message": "Kjo gjobë i është faturuar tashmë klientit.",
-        "error_code": "rental_fine_already_charged"
+    "rental_fine_already_paid": {
+        "message": "Pagesa e kësaj gjobe është regjistruar tashmë.",
+        "error_code": "rental_fine_already_paid"
+    },
+    "rental_fine_invalid_status": {
+        "message": "Ky hap nuk është i mundur në statusin aktual të gjobës.",
+        "error_code": "rental_fine_invalid_status"
     },
     "rental_fine_no_booking": {
         "message": "Asnjë rezervim nuk e kishte këtë makinë në kohën e shkeljes, ndaj nuk ka klient për të faturuar.",
@@ -344,6 +352,10 @@
         "message": "Zgjidhni dy vendndodhje të ndryshme.",
         "error_code": "rental_transfer_same_location"
     },
+    "rental_vehicle_papers_expired": {
+        "message": "Sigurimi ose dokumentet e {} skadojnë para kthimit. Rinovojini ose jepini klientit një makinë tjetër.",
+        "error_code": "rental_vehicle_papers_expired"
+    },
     "rental_vehicle_wrong_category": {
         "message": "Mjeti nuk i përket kategorisë së rezervuar.",
         "error_code": "rental_vehicle_wrong_category"
@@ -398,6 +410,16 @@
         "error_code": "vehicleInsurance_already_exists",
         "status": 409
     },
+    "vehicleInsurance_cancelled": {
+        "message": "Kjo policë është anuluar. Riktheni atë para se ta ndryshoni.",
+        "error_code": "vehicleInsurance_cancelled",
+        "status": 409
+    },
+    "vehicleInsurance_invalid_status": {
+        "message": "Kjo policë nuk mund të ndryshohet më në këtë mënyrë.",
+        "error_code": "vehicleInsurance_invalid_status",
+        "status": 409
+    },
     "vehicleInsurance_not_found": {
         "message": "Polica e sigurimit të automjetit nuk u gjet.",
         "error_code": "vehicleInsurance_not_found",
@@ -428,6 +450,10 @@
         "error_code": "vehicle_already_exists",
         "status": 409
     },
+    "vehicle_block_managed": {
+        "message": "Ky bllokim i përket një transferimi ose servisi. Ndryshojeni ose anulojeni atje.",
+        "error_code": "vehicle_block_managed"
+    },
     "vehicle_block_overlaps_reservation": {
         "message": "Mjeti është i rezervuar gjatë asaj kohe ({}). Ricaktojeni fillimisht atë rezervim.",
         "error_code": "vehicle_block_overlaps_reservation",
@@ -455,6 +481,14 @@
         "message": "Lidheni dëmtimin me një rezervim para se ta faturoni.",
         "error_code": "vehicle_damage_no_reservation"
     },
+    "vehicle_damage_not_open": {
+        "message": "Vetëm një dëmtim i hapur mund të dërgohet për riparim.",
+        "error_code": "vehicle_damage_not_open"
+    },
+    "vehicle_damage_policy_mismatch": {
+        "message": "Polica e sigurimit duhet t'i përkasë mjetit të dëmtuar.",
+        "error_code": "vehicle_damage_policy_mismatch"
+    },
     "vehicle_damage_reservation_mismatch": {
         "message": "Ky rezervim është për një automjet tjetër. Zgjidhni një rezervim të makinës së dëmtuar.",
         "error_code": "vehicle_damage_reservation_mismatch",
@@ -464,6 +498,10 @@
         "message": "Ky mjet ka {} rezervim(e) të ardhshme. Ricaktojini ose anulojini fillimisht.",
         "error_code": "vehicle_has_future_reservations",
         "status": 409
+    },
+    "vehicle_maintenance_not_scheduled": {
+        "message": "Vetëm një servis i planifikuar mund të përfundohet ose anulohet.",
+        "error_code": "vehicle_maintenance_not_scheduled"
     },
     "vehicle_not_active": {
         "message": "Ky mjet është në mirëmbajtje ose i tërhequr dhe nuk mund të jepet me qira.",
@@ -479,6 +517,18 @@
         "message": "Një mjet tjetër e ka tashmë këtë targë.",
         "error_code": "vehicle_plate_taken",
         "status": 409
+    },
+    "vehicle_record_not_renewable": {
+        "message": "Ky regjistrim nuk mund të rinovohet: i përket një mjeti ose lloji tjetër, ose është rinovuar tashmë.",
+        "error_code": "vehicle_record_not_renewable"
+    },
+    "vehicle_repair_date_required": {
+        "message": "Zgjidhni datën e riparimit.",
+        "error_code": "vehicle_repair_date_required"
+    },
+    "vehicle_repair_not_found": {
+        "message": "Ky riparim nuk është riparim i planifikuar i këtij mjeti.",
+        "error_code": "vehicle_repair_not_found"
     },
     "vehicle_unavailable": {
         "message": "Ky mjet është tashmë i rezervuar ose i bllokuar për atë kohë.",

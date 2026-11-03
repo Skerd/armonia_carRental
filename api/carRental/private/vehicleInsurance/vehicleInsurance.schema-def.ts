@@ -7,7 +7,10 @@ export const VEHICLE_INSURANCE_STATUSES = ["active", "expired", "cancelled"] as 
 export const VEHICLE_INSURER_MAX = 128;
 export const VEHICLE_POLICY_NUMBER_MAX = 64;
 
-/** One insurance policy of one vehicle. A renewal is a new policy, so the history stays. */
+/**
+ * One insurance policy of one vehicle. A renewal is a new policy that names the one it
+ * `supersedes` (set at create only), so the history stays as a chain.
+ */
 export const VehicleInsuranceSchemaDef = {
     vehicle:      {type: "objectId", required: true},
     insurer:      {type: "string", required: true, min: 1, max: VEHICLE_INSURER_MAX},
@@ -20,6 +23,7 @@ export const VehicleInsuranceSchemaDef = {
     status:       {type: "enum", required: false, options: VEHICLE_INSURANCE_STATUSES},
     attachments:  {type: "mediaIdArray", required: false},
     notes:        {type: "string", required: false, max: VEHICLE_RECORD_NOTES_MAX},
+    supersedes:   {type: "objectId", required: false},
 } as const;
 
 export type CreateVehicleInsuranceFormType = InferCreateForm<typeof VehicleInsuranceSchemaDef>;

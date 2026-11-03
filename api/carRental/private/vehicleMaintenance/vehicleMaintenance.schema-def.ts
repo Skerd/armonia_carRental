@@ -2,16 +2,23 @@ import type {InferCreateForm, InferEditForm} from "../../../../../core/helpers/s
 import {VEHICLE_RECORD_NOTES_MAX} from "../vehicle/vehicle.schema-def";
 
 export const VEHICLE_MAINTENANCE_TYPES = ["scheduled_service", "oil_change", "tires", "brakes", "inspection", "repair", "battery", "other"] as const;
-/** Only `completed` records set the vehicle's next service due date and km. */
+/**
+ * Only `completed` records set the vehicle's next service due date and km. A record is
+ * entered `scheduled` or `completed`; after that the complete and cancel actions move it.
+ */
 export const VEHICLE_MAINTENANCE_STATUSES = ["scheduled", "completed", "cancelled"] as const;
 export const VEHICLE_MAINTENANCE_PROVIDER_MAX = 128;
 
-/** One service, repair or check of one vehicle. */
+/**
+ * One service, repair or check of one vehicle. A scheduled one with `readyAt` keeps the
+ * car out of bookings from the service date until then; that window is fixed once saved.
+ */
 export const VehicleMaintenanceSchemaDef = {
     vehicle:     {type: "objectId", required: true},
     type:        {type: "enum", required: true, options: VEHICLE_MAINTENANCE_TYPES},
     status:      {type: "enum", required: false, options: VEHICLE_MAINTENANCE_STATUSES},
     serviceDate: {type: "date", required: true},
+    readyAt:     {type: "date", required: false, afterField: "serviceDate"},
     odometerKm:  {type: "number", required: false, min: 0},
     provider:    {type: "string", required: false, max: VEHICLE_MAINTENANCE_PROVIDER_MAX},
     cost:        {type: "number", required: false, min: 0},

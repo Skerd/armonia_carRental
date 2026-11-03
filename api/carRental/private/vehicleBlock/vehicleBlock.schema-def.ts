@@ -2,6 +2,8 @@ import type {InferCreateForm, InferEditForm} from "../../../../../core/helpers/s
 
 export const VEHICLE_BLOCK_REASONS = ["maintenance", "repair", "transfer", "other"] as const;
 export const VEHICLE_BLOCK_NOTE_MAX = 500;
+/** What made a block when it is not a hand-made one: it is then changed through that record only. */
+export const VEHICLE_BLOCK_SOURCES = ["transfer", "service"] as const;
 
 /** Time a vehicle cannot be rented. The window is fixed at create; only reason and note change. */
 export const VehicleBlockSchemaDef = {

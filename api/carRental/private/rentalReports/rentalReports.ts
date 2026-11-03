@@ -22,9 +22,15 @@ export type RentalReportVehicle = {
     availableHours: number;
     utilisation: number;
     revenue: number;
+    /** Completed services other than repairs. */
     maintenanceCost: number;
+    /** Completed repair records: a damage's cost is the cost of its repair. */
     repairCost: number;
     insurancePremium: number;
+    /** Fines the company paid and kept (no booking to recharge). */
+    finesCost: number;
+    /** Damage costs got back: charged to customers plus paid by insurers. */
+    recovered: number;
     purchasePrice: number;
     /** Revenue in the window divided by the purchase price. Omitted when the price is unknown. */
     payback?: number;

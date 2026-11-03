@@ -7,7 +7,10 @@ export const VEHICLE_DOCUMENT_STATUSES = ["active", "expired"] as const;
 export const VEHICLE_DOCUMENT_NUMBER_MAX = 64;
 export const VEHICLE_DOCUMENT_ISSUER_MAX = 128;
 
-/** A registration, inspection certificate or similar paper of one vehicle. */
+/**
+ * A registration, inspection certificate or similar paper of one vehicle. A renewal is a
+ * new document that names the one it `supersedes` (set at create only).
+ */
 export const VehicleDocumentSchemaDef = {
     vehicle:        {type: "objectId", required: true},
     type:           {type: "enum", required: true, options: VEHICLE_DOCUMENT_TYPES},
@@ -18,6 +21,7 @@ export const VehicleDocumentSchemaDef = {
     status:         {type: "enum", required: false, options: VEHICLE_DOCUMENT_STATUSES},
     attachments:    {type: "mediaIdArray", required: false},
     notes:          {type: "string", required: false, max: VEHICLE_RECORD_NOTES_MAX},
+    supersedes:     {type: "objectId", required: false},
 } as const;
 
 export type CreateVehicleDocumentFormType = InferCreateForm<typeof VehicleDocumentSchemaDef>;

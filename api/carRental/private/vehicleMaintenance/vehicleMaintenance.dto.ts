@@ -1,6 +1,7 @@
 import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
 import type {Media} from "../../../../../core/types";
 import type {VehicleSimple} from "../../../../dto/vehicle.dto";
+import type {VehicleDamageSimple} from "../../../../dto/vehicleDamage.dto";
 import type {VEHICLE_MAINTENANCE_STATUSES, VEHICLE_MAINTENANCE_TYPES} from "./vehicleMaintenance.schema-def";
 
 export type VehicleMaintenance = DeletedData & OwnershipData & LifeCycleData & {
@@ -9,6 +10,7 @@ export type VehicleMaintenance = DeletedData & OwnershipData & LifeCycleData & {
     type: (typeof VEHICLE_MAINTENANCE_TYPES)[number];
     status: (typeof VEHICLE_MAINTENANCE_STATUSES)[number];
     serviceDate: string;
+    readyAt?: string;
     odometerKm?: number;
     provider?: string;
     cost?: number;
@@ -16,4 +18,6 @@ export type VehicleMaintenance = DeletedData & OwnershipData & LifeCycleData & {
     nextDueAt?: string;
     nextDueKm?: number;
     attachments?: Media[];
+    /** The damage reports this repair fixes. */
+    damages?: VehicleDamageSimple[];
 };
