@@ -18,6 +18,7 @@ import {
     RENTAL_LICENSE_COUNTRY_MAX,
     RENTAL_NEW_DAMAGES_MAX_ITEMS,
     RENTAL_NOTES_MAX,
+    RENTAL_PAYMENT_CHOICES,
     RENTAL_PRICE_LINE_CODES,
     RENTAL_PROMO_CODE_INPUT_MAX,
     RENTAL_REASON_MAX,
@@ -68,6 +69,25 @@ export const CreateRentalReservationFormDef = {
     idempotencyKey: {type: "string", required: true, ...RENTAL_IDEMPOTENCY_KEY},
 } as const;
 export type CreateRentalReservationFormType = InferCreateForm<typeof CreateRentalReservationFormDef>;
+
+/**
+ * The stored reservation's fields that a booking request sets as given (TD-B40). The rest (number, status,
+ * times, pricing, snapshot, policy, payments, timeline) is server-owned. `validateSchemaDefAgainstMongoose`
+ * keeps this aligned with the Mongoose schema.
+ */
+export const RentalReservationSchemaDef = {
+    category:        {type: "objectId", required: true},
+    vehicle:         {type: "objectId", required: false},
+    pickupLocation:  {type: "objectId", required: true},
+    returnLocation:  {type: "objectId", required: true},
+    customer:        {type: "objectId", required: false},
+    contact:         {type: "embedded", required: true, items: RentalContactDef},
+    businessAccount: {type: "objectId", required: false},
+    paymentChoice:   {type: "enum", required: true, options: RENTAL_PAYMENT_CHOICES},
+    crossBorder:     {type: "boolean", required: false},
+    notes:           {type: "string", required: false, max: RENTAL_NOTES_MAX},
+    idempotencyKey:  {type: "string", required: true, ...RENTAL_IDEMPOTENCY_KEY},
+} as const;
 
 export const RecordRentalPaymentFormDef = {
     _id:    {type: "objectId", required: true},
