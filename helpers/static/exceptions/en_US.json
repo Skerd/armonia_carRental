@@ -122,7 +122,7 @@
     "status": 403
   },
   "rental_deny_needs_identifier": {
-    "message": "Give an email or a licence number.",
+    "message": "Give an email or a license number.",
     "error_code": "rental_deny_needs_identifier",
     "status": 400
   },
@@ -147,11 +147,11 @@
     "error_code": "rental_driver_birth_date_invalid"
   },
   "rental_driver_license_expired": {
-    "message": "The driving licence of {} expires before the return day.",
+    "message": "The driving license of {} expires before the return day.",
     "error_code": "rental_driver_license_expired"
   },
   "rental_driver_license_missing": {
-    "message": "Add the driving licence number for {} before handing over the car.",
+    "message": "Add the driving license number for {} before handing over the car.",
     "error_code": "rental_driver_license_missing"
   },
   "rental_driver_primary_required": {
@@ -198,7 +198,7 @@
     "error_code": "rental_fine_invalid_status"
   },
   "rental_fine_no_booking": {
-    "message": "No booking had this car at the time of the offence, so there is no customer to charge.",
+    "message": "No booking had this car at the time of the offense, so there is no customer to charge.",
     "error_code": "rental_fine_no_booking"
   },
   "rental_guest_booking_disabled": {

@@ -40,12 +40,12 @@
     "status": 409
   },
   "rentalExtra_not_found": {
-    "message": "Une option choisie n'est plus proposée.",
+    "message": "Un supplément choisi n'est plus proposé.",
     "error_code": "rentalExtra_not_found",
     "status": 404
   },
   "rentalLocation_already_exists": {
-    "message": "Un autre site utilise déjà ce nom.",
+    "message": "Une autre agence utilise déjà ce nom.",
     "error_code": "rentalLocation_already_exists",
     "status": 409
   },
@@ -176,12 +176,12 @@
     "status": 400
   },
   "rental_extra_name_taken": {
-    "message": "Une autre option porte déjà ce nom.",
+    "message": "Un autre supplément porte déjà ce nom.",
     "error_code": "rental_extra_name_taken",
     "status": 409
   },
   "rental_extra_not_found": {
-    "message": "Une option choisie n'est plus proposée.",
+    "message": "Un supplément choisi n'est plus proposé.",
     "error_code": "rental_extra_not_found",
     "status": 404
   },

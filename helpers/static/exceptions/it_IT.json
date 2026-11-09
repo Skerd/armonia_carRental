@@ -135,7 +135,7 @@
     "error_code": "rental_deposit_amount_required"
   },
   "rental_deposit_keep_too_high": {
-    "message": "Puoi trattenere al massimo i {} trattenuti.",
+    "message": "Puoi trattenere al massimo i {} bloccati.",
     "error_code": "rental_deposit_keep_too_high"
   },
   "rental_deposit_not_held": {
@@ -411,7 +411,7 @@
     "status": 409
   },
   "vehicleInsurance_cancelled": {
-    "message": "Questa polizza è annullata. Ripristinatela prima di modificarla.",
+    "message": "Questa polizza è annullata. Ripristinala prima di modificarla.",
     "error_code": "vehicleInsurance_cancelled",
     "status": 409
   },
