@@ -1,3 +1,4 @@
+import type {VehicleReadiness} from "../vehicle/vehicle.schema-def";
 import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
 import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 import type {SimpleBlankUser} from "../../../../../core/dto/user.dto";
@@ -153,3 +154,20 @@ export type RentalReturnChargesPreview = {
 
 /** A damage report of the car, shown at handover for the customer to acknowledge. */
 export type RentalOpenDamage = {_id: string; area: string; severity: string; description: string; photos?: Media[]};
+
+/**
+ * How far a booking can be extended on its car: until the next booking or block starts (turnaround kept), in
+ * the return location's zone; `closedDays` are the local days the return location is closed until then.
+ */
+export type RentalExtendWindow = {
+    until?: string;
+    closedDays: string[];
+    timeZone: string;
+};
+
+/** A car of the booking's class that is free for its whole window, for "Change car". */
+export type RentalFreeVehicle = {
+    value: string;
+    label: string;
+    readiness: VehicleReadiness;
+};
