@@ -25,7 +25,7 @@ const VehicleCategorySeasonDef = {
 
 export const VehicleCategorySchemaDef = {
     name:             {type: "string", required: true, min: 1, max: VEHICLE_CATEGORY_NAME_MAX},
-    slug:             {type: "string", required: true, min: 1, max: VEHICLE_CATEGORY_SLUG_MAX, format: "slug"},
+    slug:             {type: "string", required: false, min: 1, max: VEHICLE_CATEGORY_SLUG_MAX, format: "slug"},
     description:      {type: "string", required: false, max: VEHICLE_CATEGORY_DESCRIPTION_MAX},
     images:           {type: "mediaIdArray", required: false, publicAccess: true},
     videos:           {type: "mediaIdArray", required: false, publicAccess: true},
