@@ -1,3 +1,4 @@
+import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
 import type {VehicleCategorySimple} from "../../../../dto/vehicleCategory.dto";
 import type {RentalLocationSimple} from "../../../../dto/rentalLocation.dto";
@@ -15,4 +16,6 @@ export type RentalSubscription = DeletedData & OwnershipData & LifeCycleData & {
     price: number;
     status: (typeof RENTAL_SUBSCRIPTION_STATUSS)[number];
     nextRunAt: string;
+    /** The rental currency its amounts are in, added by the route (UX-07). */
+    currency?: CurrencySimple;
 };

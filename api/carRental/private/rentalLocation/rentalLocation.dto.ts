@@ -1,3 +1,4 @@
+import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
 import type {CountrySimple} from "../../../../../core/dto/country.dto";
 import type {CitySimple} from "../../../../../core/dto/city.dto";
@@ -23,4 +24,6 @@ export type RentalLocation = DeletedData & OwnershipData & LifeCycleData & {
     returnAllowed: boolean;
     oneWayFee?: number;
     isActive: boolean;
+    /** The rental currency its amounts are in, added by the route (UX-07). */
+    currency?: CurrencySimple;
 };

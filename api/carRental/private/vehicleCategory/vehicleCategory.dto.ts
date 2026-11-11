@@ -1,3 +1,4 @@
+import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
 import type {Media} from "../../../../../core/types";
 import type {VEHICLE_FUEL_TYPES, VEHICLE_MILEAGE_POLICIES, VEHICLE_TRANSMISSIONS} from "./vehicleCategory.schema-def";
@@ -28,4 +29,6 @@ export type VehicleCategory = DeletedData & OwnershipData & LifeCycleData & {
     crossBorderFee?: number;
     isPublic: boolean;
     sortOrder: number;
+    /** The rental currency its amounts are in, added by the route (UX-07). */
+    currency?: CurrencySimple;
 };

@@ -1,3 +1,4 @@
+import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
 import type {VehicleCategorySimple} from "../../../../dto/vehicleCategory.dto";
 import type {RENTAL_PROMO_CODE_TYPES} from "./rentalPromoCode.schema-def";
@@ -18,4 +19,6 @@ export type RentalPromoCode = DeletedData & OwnershipData & LifeCycleData & {
     usageCount?: number;
     isActive: boolean;
     description?: string;
+    /** The rental currency its amounts are in, added by the route (UX-07). */
+    currency?: CurrencySimple;
 };

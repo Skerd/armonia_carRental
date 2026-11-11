@@ -1,3 +1,4 @@
+import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
 import type {Media} from "../../../../../core/types";
 import type {VehicleSimple} from "../../../../dto/vehicle.dto";
@@ -26,4 +27,6 @@ export type VehicleFine = DeletedData & OwnershipData & LifeCycleData & {
     paymentReference?: string;
     attachments?: Media[];
     notes?: string;
+    /** The rental currency its amounts are in, added by the route (UX-07). */
+    currency?: CurrencySimple;
 };
