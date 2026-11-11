@@ -534,5 +534,9 @@
     "message": "This vehicle is already booked or blocked for that time.",
     "error_code": "vehicle_unavailable",
     "status": 409
+  },
+  "rental_driver_license_dates_invalid": {
+    "message": "The driving licence of {} must be issued before it expires and by the pickup day.",
+    "error_code": "rental_driver_license_dates_invalid"
   }
 }

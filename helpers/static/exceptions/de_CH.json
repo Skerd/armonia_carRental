@@ -534,5 +534,9 @@
     "message": "Dieses Fahrzeug ist für diesen Zeitraum bereits gebucht oder gesperrt.",
     "error_code": "vehicle_unavailable",
     "status": 409
+  },
+  "rental_driver_license_dates_invalid": {
+    "message": "Der Führerschein von {} muss vor seinem Ablauf und spätestens am Abholtag ausgestellt sein.",
+    "error_code": "rental_driver_license_dates_invalid"
   }
 }

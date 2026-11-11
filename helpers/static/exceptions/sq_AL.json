@@ -534,5 +534,9 @@
     "message": "Ky automjet është tashmë i rezervuar ose i bllokuar për atë kohë.",
     "error_code": "vehicle_unavailable",
     "status": 409
+  },
+  "rental_driver_license_dates_invalid": {
+    "message": "Patenta e {} duhet të jetë lëshuar para skadimit dhe jo më vonë se dita e marrjes.",
+    "error_code": "rental_driver_license_dates_invalid"
   }
 }

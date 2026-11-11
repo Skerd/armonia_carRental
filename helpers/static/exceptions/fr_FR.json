@@ -534,5 +534,9 @@
     "message": "Ce véhicule est déjà réservé ou bloqué pour cette période.",
     "error_code": "vehicle_unavailable",
     "status": 409
+  },
+  "rental_driver_license_dates_invalid": {
+    "message": "Le permis de {} doit être délivré avant son expiration et au plus tard le jour de la prise en charge.",
+    "error_code": "rental_driver_license_dates_invalid"
   }
 }
