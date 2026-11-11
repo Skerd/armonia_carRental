@@ -30,6 +30,8 @@ export type RentalPriceLine = {
     quantity: number;
     unitPrice: number;
     total: number;
+    /** The booking's currency, repeated on each line for display. */
+    currency?: CurrencySimple;
 };
 
 /** Every amount a customer is charged for, fixed when the reservation is made. */

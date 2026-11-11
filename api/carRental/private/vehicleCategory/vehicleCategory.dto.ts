@@ -19,7 +19,8 @@ export type VehicleCategory = DeletedData & OwnershipData & LifeCycleData & {
     dailyRate: number;
     weekendDailyRate?: number;
     weeklyRate?: number;
-    rateSeasons: {startDate: string; endDate: string; dailyRate: number}[];
+    /** `currency` is the class's, repeated on each season for display. */
+    rateSeasons: {startDate: string; endDate: string; dailyRate: number; currency?: CurrencySimple}[];
     depositAmount?: number;
     mileagePolicy: (typeof VEHICLE_MILEAGE_POLICIES)[number];
     includedKmPerDay?: number;
