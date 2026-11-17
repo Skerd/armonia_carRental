@@ -4,15 +4,18 @@
     "codes": {
       "RENTAL_RESERVATION_NEW": {
         "title": "Nuova prenotazione di noleggio",
-        "message": "Nuova prenotazione di noleggio {number} ({category})"
+        "message": "Nuova prenotazione di noleggio {number} ({category})",
+        "link": "/carRental/reservations?open={reservationId}"
       },
       "RENTAL_RESERVATION_CANCELLED": {
         "title": "Prenotazione annullata dal cliente",
-        "message": "La prenotazione di noleggio {number} è stata annullata dal cliente"
+        "message": "La prenotazione di noleggio {number} è stata annullata dal cliente",
+        "link": "/carRental/reservations?open={reservationId}"
       },
       "VEHICLE_INSURANCE_EXPIRING": {
         "title": "Assicurazione in scadenza",
-        "message": "L'assicurazione {policy} ({insurer}) di {plate} scade il {expiresOn}"
+        "message": "L'assicurazione {policy} ({insurer}) di {plate} scade il {expiresOn}",
+        "link": "/carRental/insurance?open={recordId}"
       },
       "VEHICLE_DOCUMENT_EXPIRING": {
         "title": "Documento del veicolo in scadenza",
@@ -23,7 +26,8 @@
           "emissions_test": "Il controllo delle emissioni di {plate} scade il {expiresOn}",
           "road_tax": "La tassa di circolazione di {plate} scade il {expiresOn}",
           "green_card": "La carta verde di {plate} scade il {expiresOn}"
-        }
+        },
+        "link": "/carRental/documents?open={recordId}"
       },
       "VEHICLE_SERVICE_DUE": {
         "title": "Tagliando in scadenza",
@@ -32,11 +36,13 @@
           "date": "{plate} deve fare il tagliando entro il {dueOn}",
           "km": "{plate} deve fare il tagliando a {dueKm} km",
           "dateAndKm": "{plate} deve fare il tagliando entro il {dueOn} o a {dueKm} km"
-        }
+        },
+        "link": "/carRental/vehicles?open={vehicleId}"
       },
       "VEHICLE_INSURANCE_EXPIRED": {
         "title": "Assicurazione scaduta",
-        "message": "L'assicurazione {policy} di {plate} è scaduta senza rinnovo: il veicolo non può essere consegnato"
+        "message": "L'assicurazione {policy} di {plate} è scaduta senza rinnovo: il veicolo non può essere consegnato",
+        "link": "/carRental/insurance?open={recordId}"
       },
       "VEHICLE_DOCUMENT_EXPIRED": {
         "title": "Documento del veicolo scaduto",
@@ -47,7 +53,8 @@
           "emissions_test": "Il controllo delle emissioni di {plate} è scaduto senza rinnovo",
           "road_tax": "La tassa di circolazione di {plate} è scaduta senza rinnovo",
           "green_card": "La carta verde di {plate} è scaduta senza rinnovo"
-        }
+        },
+        "link": "/carRental/documents?open={recordId}"
       },
       "VEHICLE_DAMAGE_REPORTED": {
         "title": "Danno segnalato",
@@ -56,11 +63,13 @@
           "minor": "Nuovo danno lieve segnalato su {plate}",
           "moderate": "Nuovo danno moderato segnalato su {plate}",
           "major": "Nuovo danno grave segnalato su {plate}"
-        }
+        },
+        "link": "/carRental/damages?open={recordId}"
       },
       "VEHICLE_FINE_DUE": {
         "title": "Multa in scadenza",
-        "message": "La multa {reference} ({authority}) di {plate} scade il {dueOn} e non è pagata"
+        "message": "La multa {reference} ({authority}) di {plate} scade il {dueOn} e non è pagata",
+        "link": "/carRental/fines?open={recordId}"
       }
     }
   }

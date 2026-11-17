@@ -4,15 +4,18 @@
     "codes": {
       "RENTAL_RESERVATION_NEW": {
         "title": "Rezervim i ri qiraje",
-        "message": "Rezervim i ri qiraje {number} ({category})"
+        "message": "Rezervim i ri qiraje {number} ({category})",
+        "link": "/carRental/reservations?open={reservationId}"
       },
       "RENTAL_RESERVATION_CANCELLED": {
         "title": "Rezervimi u anulua nga klienti",
-        "message": "Rezervimi i qirasë {number} u anulua nga klienti"
+        "message": "Rezervimi i qirasë {number} u anulua nga klienti",
+        "link": "/carRental/reservations?open={reservationId}"
       },
       "VEHICLE_INSURANCE_EXPIRING": {
         "title": "Sigurimi po skadon",
-        "message": "Sigurimi {policy} ({insurer}) i {plate} skadon më {expiresOn}"
+        "message": "Sigurimi {policy} ({insurer}) i {plate} skadon më {expiresOn}",
+        "link": "/carRental/insurance?open={recordId}"
       },
       "VEHICLE_DOCUMENT_EXPIRING": {
         "title": "Dokumenti i makinës po skadon",
@@ -23,7 +26,8 @@
           "emissions_test": "Kontrolli i shkarkimeve i {plate} skadon më {expiresOn}",
           "road_tax": "Taksa rrugore e {plate} skadon më {expiresOn}",
           "green_card": "Karta jeshile e {plate} skadon më {expiresOn}"
-        }
+        },
+        "link": "/carRental/documents?open={recordId}"
       },
       "VEHICLE_SERVICE_DUE": {
         "title": "Servisi është në afat",
@@ -32,11 +36,13 @@
           "date": "{plate} duhet të shkojë në servis deri më {dueOn}",
           "km": "{plate} duhet të shkojë në servis në {dueKm} km",
           "dateAndKm": "{plate} duhet të shkojë në servis deri më {dueOn} ose në {dueKm} km"
-        }
+        },
+        "link": "/carRental/vehicles?open={vehicleId}"
       },
       "VEHICLE_INSURANCE_EXPIRED": {
         "title": "Sigurimi ka skaduar",
-        "message": "Sigurimi {policy} i {plate} ka skaduar pa u rinovuar: makina nuk mund të dorëzohet"
+        "message": "Sigurimi {policy} i {plate} ka skaduar pa u rinovuar: makina nuk mund të dorëzohet",
+        "link": "/carRental/insurance?open={recordId}"
       },
       "VEHICLE_DOCUMENT_EXPIRED": {
         "title": "Dokumenti i makinës ka skaduar",
@@ -47,7 +53,8 @@
           "emissions_test": "Kontrolli i shkarkimeve i {plate} ka skaduar pa u rinovuar",
           "road_tax": "Taksa rrugore e {plate} ka skaduar pa u rinovuar",
           "green_card": "Karta jeshile e {plate} ka skaduar pa u rinovuar"
-        }
+        },
+        "link": "/carRental/documents?open={recordId}"
       },
       "VEHICLE_DAMAGE_REPORTED": {
         "title": "U raportua dëmtim",
@@ -56,11 +63,13 @@
           "minor": "U raportua dëmtim i lehtë i ri në {plate}",
           "moderate": "U raportua dëmtim i mesëm i ri në {plate}",
           "major": "U raportua dëmtim i rëndë i ri në {plate}"
-        }
+        },
+        "link": "/carRental/damages?open={recordId}"
       },
       "VEHICLE_FINE_DUE": {
         "title": "Gjoba në afat",
-        "message": "Gjoba {reference} ({authority}) e {plate} skadon më {dueOn} dhe nuk është paguar"
+        "message": "Gjoba {reference} ({authority}) e {plate} skadon më {dueOn} dhe nuk është paguar",
+        "link": "/carRental/fines?open={recordId}"
       }
     }
   }

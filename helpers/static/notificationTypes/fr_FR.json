@@ -4,15 +4,18 @@
     "codes": {
       "RENTAL_RESERVATION_NEW": {
         "title": "Nouvelle réservation de location",
-        "message": "Nouvelle réservation de location {number} ({category})"
+        "message": "Nouvelle réservation de location {number} ({category})",
+        "link": "/carRental/reservations?open={reservationId}"
       },
       "RENTAL_RESERVATION_CANCELLED": {
         "title": "Réservation annulée par le client",
-        "message": "La réservation de location {number} a été annulée par le client"
+        "message": "La réservation de location {number} a été annulée par le client",
+        "link": "/carRental/reservations?open={reservationId}"
       },
       "VEHICLE_INSURANCE_EXPIRING": {
         "title": "Assurance arrivant à échéance",
-        "message": "L'assurance {policy} ({insurer}) de {plate} expire le {expiresOn}"
+        "message": "L'assurance {policy} ({insurer}) de {plate} expire le {expiresOn}",
+        "link": "/carRental/insurance?open={recordId}"
       },
       "VEHICLE_DOCUMENT_EXPIRING": {
         "title": "Document du véhicule arrivant à échéance",
@@ -23,7 +26,8 @@
           "emissions_test": "Le contrôle antipollution de {plate} expire le {expiresOn}",
           "road_tax": "La taxe de circulation de {plate} expire le {expiresOn}",
           "green_card": "La carte verte de {plate} expire le {expiresOn}"
-        }
+        },
+        "link": "/carRental/documents?open={recordId}"
       },
       "VEHICLE_SERVICE_DUE": {
         "title": "Entretien à prévoir",
@@ -32,11 +36,13 @@
           "date": "{plate} doit passer à l'entretien avant le {dueOn}",
           "km": "{plate} doit passer à l'entretien à {dueKm} km",
           "dateAndKm": "{plate} doit passer à l'entretien avant le {dueOn} ou à {dueKm} km"
-        }
+        },
+        "link": "/carRental/vehicles?open={vehicleId}"
       },
       "VEHICLE_INSURANCE_EXPIRED": {
         "title": "Assurance expirée",
-        "message": "L'assurance {policy} de {plate} a expiré sans renouvellement : le véhicule ne peut pas être remis"
+        "message": "L'assurance {policy} de {plate} a expiré sans renouvellement : le véhicule ne peut pas être remis",
+        "link": "/carRental/insurance?open={recordId}"
       },
       "VEHICLE_DOCUMENT_EXPIRED": {
         "title": "Document du véhicule expiré",
@@ -47,7 +53,8 @@
           "emissions_test": "Le contrôle antipollution de {plate} a expiré sans renouvellement",
           "road_tax": "La taxe de circulation de {plate} a expiré sans renouvellement",
           "green_card": "La carte verte de {plate} a expiré sans renouvellement"
-        }
+        },
+        "link": "/carRental/documents?open={recordId}"
       },
       "VEHICLE_DAMAGE_REPORTED": {
         "title": "Dommage signalé",
@@ -56,11 +63,13 @@
           "minor": "Nouveau dommage mineur signalé sur {plate}",
           "moderate": "Nouveau dommage modéré signalé sur {plate}",
           "major": "Nouveau dommage important signalé sur {plate}"
-        }
+        },
+        "link": "/carRental/damages?open={recordId}"
       },
       "VEHICLE_FINE_DUE": {
         "title": "Amende à payer",
-        "message": "L'amende {reference} ({authority}) de {plate} est due le {dueOn} et n'est pas payée"
+        "message": "L'amende {reference} ({authority}) de {plate} est due le {dueOn} et n'est pas payée",
+        "link": "/carRental/fines?open={recordId}"
       }
     }
   }

@@ -4,15 +4,18 @@
     "codes": {
       "RENTAL_RESERVATION_NEW": {
         "title": "New rental booking",
-        "message": "New rental booking {number} ({category})"
+        "message": "New rental booking {number} ({category})",
+        "link": "/carRental/reservations?open={reservationId}"
       },
       "RENTAL_RESERVATION_CANCELLED": {
         "title": "Booking cancelled by the customer",
-        "message": "Rental booking {number} was cancelled by the customer"
+        "message": "Rental booking {number} was cancelled by the customer",
+        "link": "/carRental/reservations?open={reservationId}"
       },
       "VEHICLE_INSURANCE_EXPIRING": {
         "title": "Insurance expiring",
-        "message": "Insurance {policy} ({insurer}) of {plate} expires on {expiresOn}"
+        "message": "Insurance {policy} ({insurer}) of {plate} expires on {expiresOn}",
+        "link": "/carRental/insurance?open={recordId}"
       },
       "VEHICLE_DOCUMENT_EXPIRING": {
         "title": "Car document expiring",
@@ -23,7 +26,8 @@
           "emissions_test": "The emissions test of {plate} expires on {expiresOn}",
           "road_tax": "The road tax of {plate} expires on {expiresOn}",
           "green_card": "The green card of {plate} expires on {expiresOn}"
-        }
+        },
+        "link": "/carRental/documents?open={recordId}"
       },
       "VEHICLE_SERVICE_DUE": {
         "title": "Service due",
@@ -32,11 +36,13 @@
           "date": "{plate} is due for service by {dueOn}",
           "km": "{plate} is due for service at {dueKm} km",
           "dateAndKm": "{plate} is due for service by {dueOn} or at {dueKm} km"
-        }
+        },
+        "link": "/carRental/vehicles?open={vehicleId}"
       },
       "VEHICLE_INSURANCE_EXPIRED": {
         "title": "Insurance expired",
-        "message": "Insurance {policy} of {plate} has expired with no renewal: the car cannot be handed over"
+        "message": "Insurance {policy} of {plate} has expired with no renewal: the car cannot be handed over",
+        "link": "/carRental/insurance?open={recordId}"
       },
       "VEHICLE_DOCUMENT_EXPIRED": {
         "title": "Car document expired",
@@ -47,7 +53,8 @@
           "emissions_test": "The emissions test of {plate} has expired with no renewal",
           "road_tax": "The road tax of {plate} has expired with no renewal",
           "green_card": "The green card of {plate} has expired with no renewal"
-        }
+        },
+        "link": "/carRental/documents?open={recordId}"
       },
       "VEHICLE_DAMAGE_REPORTED": {
         "title": "Damage reported",
@@ -56,11 +63,13 @@
           "minor": "New minor damage reported on {plate}",
           "moderate": "New moderate damage reported on {plate}",
           "major": "New major damage reported on {plate}"
-        }
+        },
+        "link": "/carRental/damages?open={recordId}"
       },
       "VEHICLE_FINE_DUE": {
         "title": "Fine due",
-        "message": "Fine {reference} ({authority}) of {plate} is due on {dueOn} and not paid"
+        "message": "Fine {reference} ({authority}) of {plate} is due on {dueOn} and not paid",
+        "link": "/carRental/fines?open={recordId}"
       }
     }
   }

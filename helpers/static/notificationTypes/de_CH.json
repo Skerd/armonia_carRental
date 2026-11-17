@@ -4,15 +4,18 @@
     "codes": {
       "RENTAL_RESERVATION_NEW": {
         "title": "Neue Mietbuchung",
-        "message": "Neue Mietbuchung {number} ({category})"
+        "message": "Neue Mietbuchung {number} ({category})",
+        "link": "/carRental/reservations?open={reservationId}"
       },
       "RENTAL_RESERVATION_CANCELLED": {
         "title": "Buchung vom Kunden storniert",
-        "message": "Mietbuchung {number} wurde vom Kunden storniert"
+        "message": "Mietbuchung {number} wurde vom Kunden storniert",
+        "link": "/carRental/reservations?open={reservationId}"
       },
       "VEHICLE_INSURANCE_EXPIRING": {
         "title": "Versicherung läuft ab",
-        "message": "Versicherung {policy} ({insurer}) von {plate} läuft am {expiresOn} ab"
+        "message": "Versicherung {policy} ({insurer}) von {plate} läuft am {expiresOn} ab",
+        "link": "/carRental/insurance?open={recordId}"
       },
       "VEHICLE_DOCUMENT_EXPIRING": {
         "title": "Fahrzeugdokument läuft ab",
@@ -23,7 +26,8 @@
           "emissions_test": "Die Abgaswartung von {plate} läuft am {expiresOn} ab",
           "road_tax": "Die Motorfahrzeugsteuer von {plate} läuft am {expiresOn} ab",
           "green_card": "Die grüne Versicherungskarte von {plate} läuft am {expiresOn} ab"
-        }
+        },
+        "link": "/carRental/documents?open={recordId}"
       },
       "VEHICLE_SERVICE_DUE": {
         "title": "Service fällig",
@@ -32,11 +36,13 @@
           "date": "{plate} muss bis {dueOn} zum Service",
           "km": "{plate} muss bei {dueKm} km zum Service",
           "dateAndKm": "{plate} muss bis {dueOn} oder bei {dueKm} km zum Service"
-        }
+        },
+        "link": "/carRental/vehicles?open={vehicleId}"
       },
       "VEHICLE_INSURANCE_EXPIRED": {
         "title": "Versicherung abgelaufen",
-        "message": "Versicherung {policy} von {plate} ist abgelaufen und wurde nicht erneuert: das Fahrzeug kann nicht übergeben werden"
+        "message": "Versicherung {policy} von {plate} ist abgelaufen und wurde nicht erneuert: das Fahrzeug kann nicht übergeben werden",
+        "link": "/carRental/insurance?open={recordId}"
       },
       "VEHICLE_DOCUMENT_EXPIRED": {
         "title": "Fahrzeugdokument abgelaufen",
@@ -47,7 +53,8 @@
           "emissions_test": "Die Abgaswartung von {plate} ist abgelaufen und wurde nicht erneuert",
           "road_tax": "Die Motorfahrzeugsteuer von {plate} ist abgelaufen und wurde nicht erneuert",
           "green_card": "Die grüne Versicherungskarte von {plate} ist abgelaufen und wurde nicht erneuert"
-        }
+        },
+        "link": "/carRental/documents?open={recordId}"
       },
       "VEHICLE_DAMAGE_REPORTED": {
         "title": "Schaden gemeldet",
@@ -56,11 +63,13 @@
           "minor": "Neuer leichter Schaden an {plate} gemeldet",
           "moderate": "Neuer mittlerer Schaden an {plate} gemeldet",
           "major": "Neuer schwerer Schaden an {plate} gemeldet"
-        }
+        },
+        "link": "/carRental/damages?open={recordId}"
       },
       "VEHICLE_FINE_DUE": {
         "title": "Busse fällig",
-        "message": "Busse {reference} ({authority}) von {plate} ist am {dueOn} fällig und nicht bezahlt"
+        "message": "Busse {reference} ({authority}) von {plate} ist am {dueOn} fällig und nicht bezahlt",
+        "link": "/carRental/fines?open={recordId}"
       }
     }
   }
