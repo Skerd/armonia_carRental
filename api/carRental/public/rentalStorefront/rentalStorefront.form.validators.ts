@@ -1,4 +1,6 @@
+import {z} from "zod";
 import {buildCreateZodSchema} from "../../../../../core/helpers/schemaDefBuilder";
+import {isIntegerZod, isObjectIdZod} from "../../../../../core/helpers/zodBuilder";
 import {RentalContactDef} from "../../private/rentalReservation/rentalReservation.schema-def";
 import {
     BookRentalFormDef,
@@ -52,3 +54,13 @@ export function manageInvoiceFormSchema(languageCode: string, form: any = null) 
 export function rentalContactFormSchema(languageCode: string, form: any = null) {
     return buildCreateZodSchema(RentalContactDef, languageCode, form);
 }
+
+/** A car class's published reviews on the rental site (D178): the class and how many of the latest to send. */
+export function categoryReviewsFormSchema(languageCode: string, form: Record<string, string> | null = null) {
+    return z.object({
+        category: isObjectIdZod(form?.["categoryLabel"] ?? "category", languageCode),
+        limit: isIntegerZod(form?.["limitLabel"] ?? "limit", languageCode, {min: 1, max: 20}).optional(),
+    });
+}
+
+export type CategoryReviewsFormType = z.infer<ReturnType<typeof categoryReviewsFormSchema>>;

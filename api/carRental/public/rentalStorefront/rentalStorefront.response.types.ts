@@ -167,3 +167,17 @@ export type RentalMyReservationsResponse = {
     }[];
 };
 export type PublicRentalReservationsResponse = {data: PublicRentalReservation[]};
+
+/** One published review of a car class (D178). */
+export type RentalPublishedReview = {
+    rating: number;
+    comment?: string;
+    authorName?: string;
+    createdAt: string;
+};
+
+/** A car class's published reviews: the average out of 5, how many, and the latest ones. */
+export type RentalCategoryReviewsResponse = {
+    data: {average: number; count: number; reviews: RentalPublishedReview[]};
+};
+
