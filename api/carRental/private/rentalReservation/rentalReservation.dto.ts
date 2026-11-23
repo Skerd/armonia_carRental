@@ -170,4 +170,6 @@ export type RentalFreeVehicle = {
     value: string;
     label: string;
     readiness: VehicleReadiness;
+    /** Its insurance or road papers run out before the return: the handover would refuse it until they are renewed (TD-B264). */
+    papersLapse?: boolean;
 };
