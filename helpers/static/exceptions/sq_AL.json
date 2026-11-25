@@ -98,6 +98,11 @@
     "message": "Karta e ruajtur e klientit nuk u faturua dot. Kërkoni një mënyrë tjetër pagese.",
     "error_code": "rental_card_charge_failed"
   },
+  "rental_card_payments_coming_soon": {
+    "message": "Pagesat me kartë vijnë së shpejti. Deri atëherë rezervimet dhe depozitat paguhen në sportel.",
+    "error_code": "rental_card_payments_coming_soon",
+    "status": 403
+  },
   "rental_category_unavailable": {
     "message": "Asnjë makinë në këtë kategori nuk është e lirë për atë kohë. Provoni data të tjera ose një kategori tjetër.",
     "error_code": "rental_category_unavailable",

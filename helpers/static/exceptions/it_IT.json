@@ -98,6 +98,11 @@
     "message": "Non è stato possibile addebitare la carta salvata del cliente. Chiedi un altro metodo di pagamento.",
     "error_code": "rental_card_charge_failed"
   },
+  "rental_card_payments_coming_soon": {
+    "message": "I pagamenti con carta arrivano prossimamente. Fino ad allora prenotazioni e depositi si pagano al banco.",
+    "error_code": "rental_card_payments_coming_soon",
+    "status": 403
+  },
   "rental_category_unavailable": {
     "message": "Nessuna auto di questa categoria è libera in quel periodo. Prova altre date o un'altra categoria.",
     "error_code": "rental_category_unavailable",

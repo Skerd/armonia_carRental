@@ -98,6 +98,11 @@
     "message": "La carte enregistrée du client n'a pas pu être débitée. Demandez-lui de payer autrement.",
     "error_code": "rental_card_charge_failed"
   },
+  "rental_card_payments_coming_soon": {
+    "message": "Le paiement par carte arrive bientôt. D'ici là, les réservations et les cautions se règlent au comptoir.",
+    "error_code": "rental_card_payments_coming_soon",
+    "status": 403
+  },
   "rental_category_unavailable": {
     "message": "Aucune voiture de cette catégorie n'est libre pour cette période. Essayez d'autres dates ou une autre catégorie.",
     "error_code": "rental_category_unavailable",

@@ -98,6 +98,11 @@
     "message": "The customer's saved card could not be charged. Ask them to pay another way.",
     "error_code": "rental_card_charge_failed"
   },
+  "rental_card_payments_coming_soon": {
+    "message": "Card payments are coming soon. Until then bookings and deposits are paid at the desk.",
+    "error_code": "rental_card_payments_coming_soon",
+    "status": 403
+  },
   "rental_category_unavailable": {
     "message": "No car in this category is free for that time. Try other dates or another category.",
     "error_code": "rental_category_unavailable",

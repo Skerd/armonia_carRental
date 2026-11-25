@@ -60,6 +60,7 @@ export type RentalStorefrontConfigResponse = {
     data: {
         company: {name: string; logo?: string; email?: string; phoneNumber?: string; website?: string};
         currency: CurrencySimple;
+        /** The policy in force: pay at pickup while card payments are coming soon (D190), whatever the company chose. */
         paymentPolicy: RentalPaymentPolicy;
         onlinePaymentAvailable: boolean;
         stripePublishableKey?: string;
@@ -120,6 +121,7 @@ export type PublicRentalReservation = {
     canCancel: boolean;
     canExtend: boolean;
     canAddExtras: boolean;
+    /** What is due can be paid by card online (never while card payments are coming soon, D190). */
     canPayBalance: boolean;
     canUploadDocuments: boolean;
     canReview: boolean;

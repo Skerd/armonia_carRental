@@ -98,6 +98,11 @@
     "message": "Die gespeicherte Karte der Kundschaft konnte nicht belastet werden. Bitten Sie um eine andere Zahlungsart.",
     "error_code": "rental_card_charge_failed"
   },
+  "rental_card_payments_coming_soon": {
+    "message": "Kartenzahlungen folgen demnächst. Bis dahin werden Buchungen und Kautionen am Schalter bezahlt.",
+    "error_code": "rental_card_payments_coming_soon",
+    "status": 403
+  },
   "rental_category_unavailable": {
     "message": "In dieser Kategorie ist für diesen Zeitraum kein Auto frei. Versuchen Sie andere Daten oder eine andere Kategorie.",
     "error_code": "rental_category_unavailable",
