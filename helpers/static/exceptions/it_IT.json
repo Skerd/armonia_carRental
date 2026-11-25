@@ -328,6 +328,11 @@
     "error_code": "rental_review_not_open",
     "status": 400
   },
+  "rental_review_written_by_customer_only": {
+    "message": "Le recensioni le scrivono solo i clienti, dal link nell'e-mail della prenotazione. Puoi pubblicarle o nasconderle.",
+    "error_code": "rental_review_written_by_customer_only",
+    "status": 403
+  },
   "rental_season_end_before_start": {
     "message": "Una stagione deve terminare alla data di inizio o dopo.",
     "error_code": "rental_season_end_before_start"

@@ -328,6 +328,11 @@
     "error_code": "rental_review_not_open",
     "status": 400
   },
+  "rental_review_written_by_customer_only": {
+    "message": "Vlerësimet i shkruajnë vetëm klientët, nga lidhja në email-in e rezervimit. Ju mund t'i publikoni ose t'i fshehni.",
+    "error_code": "rental_review_written_by_customer_only",
+    "status": 403
+  },
   "rental_season_end_before_start": {
     "message": "Një sezon duhet të mbarojë në datën e fillimit ose pas saj.",
     "error_code": "rental_season_end_before_start"
