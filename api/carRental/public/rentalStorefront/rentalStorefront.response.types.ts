@@ -172,6 +172,8 @@ export type PublicRentalReservationsResponse = {data: PublicRentalReservation[]}
 
 /** One published review of a car class (D178). */
 export type RentalPublishedReview = {
+    /** The review's id, for reporting it to the platform (D191). */
+    _id: string;
     rating: number;
     comment?: string;
     authorName?: string;

@@ -29,6 +29,8 @@ export type VehicleCategory = DeletedData & OwnershipData & LifeCycleData & {
     crossBorderAllowed: boolean;
     crossBorderFee?: number;
     isPublic: boolean;
+    /** Set when the platform hid the class after a report (D191): gone from the portal and the rental site. */
+    hiddenByPlatform: boolean;
     sortOrder: number;
     /** The rental currency its amounts are in, added by the route (UX-07). */
     currency?: CurrencySimple;

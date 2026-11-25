@@ -334,7 +334,7 @@
     "status": 400
   },
   "rental_review_written_by_customer_only": {
-    "message": "Reviews are written by customers, from the link in their booking email. You can publish or hide them.",
+    "message": "Reviews are written by customers, from the link in their booking email, and show at once. If one breaks the rules, report it to the platform.",
     "error_code": "rental_review_written_by_customer_only",
     "status": 403
   },

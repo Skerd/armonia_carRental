@@ -334,7 +334,7 @@
     "status": 400
   },
   "rental_review_written_by_customer_only": {
-    "message": "Vlerësimet i shkruajnë vetëm klientët, nga lidhja në email-in e rezervimit. Ju mund t'i publikoni ose t'i fshehni.",
+    "message": "Vlerësimet i shkruajnë vetëm klientët, nga lidhja në email-in e rezervimit, dhe shfaqen menjëherë. Nëse një vlerësim shkel rregullat, raportojeni te platforma.",
     "error_code": "rental_review_written_by_customer_only",
     "status": 403
   },

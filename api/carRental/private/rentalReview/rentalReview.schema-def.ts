@@ -3,7 +3,7 @@ import type {InferCreateForm, InferEditForm} from "../../../../../core/helpers/s
 export const RENTAL_REVIEW_COMMENT_MAX = 2000;
 export const RENTAL_REVIEW_AUTHOR_NAME_MAX = 128;
 
-/** A customer's review of a completed rental. Publishing is the publish action, not a form field. */
+/** A customer's review of a completed rental, shown as soon as it is written; only the platform can hide one (D191). */
 export const RentalReviewSchemaDef = {
     reservation: {type: "objectId", required: true},
     rating:      {type: "number", required: true, min: 1, max: 5},

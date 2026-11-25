@@ -334,7 +334,7 @@
     "status": 400
   },
   "rental_review_written_by_customer_only": {
-    "message": "Seuls les clients écrivent leurs avis, depuis le lien de leur e-mail de réservation. Vous pouvez les publier ou les masquer.",
+    "message": "Seuls les clients écrivent leurs avis, depuis le lien de leur e-mail de réservation, et ils s'affichent aussitôt. Si un avis enfreint les règles, signalez-le à la plateforme.",
     "error_code": "rental_review_written_by_customer_only",
     "status": 403
   },
