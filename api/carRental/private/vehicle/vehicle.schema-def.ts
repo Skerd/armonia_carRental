@@ -23,6 +23,12 @@ export const SetVehicleReadinessFormDef = {
 export const VEHICLE_STATUSES = ["active", "maintenance", "retired"] as const;
 export type VehicleStatus = (typeof VEHICLE_STATUSES)[number];
 
+/** A car's colour, from one list shown in every language (D199): consistent, and filterable on the site. */
+export const VEHICLE_COLORS = [
+    "white", "black", "silver", "grey", "blue", "red", "green", "beige", "brown", "yellow", "orange", "gold", "purple", "other",
+] as const;
+export type VehicleColor = (typeof VEHICLE_COLORS)[number];
+
 export const VEHICLE_MAKE_MAX = 64;
 export const VEHICLE_MODEL_MAX = 64;
 export const VEHICLE_PLATE_MAX = 16;
@@ -54,7 +60,7 @@ export const VehicleSchemaDef = {
     year:          {type: "number", required: false, ...VEHICLE_YEAR},
     plate:         {type: "string", required: true, min: 1, max: VEHICLE_PLATE_MAX},
     vin:           {type: "string", required: false, max: VEHICLE_VIN_MAX},
-    color:         {type: "string", required: false, max: VEHICLE_COLOR_MAX},
+    color:         {type: "enum", required: false, options: VEHICLE_COLORS},
     homeLocation:  {type: "objectId", required: true},
     status:        {type: "enum", required: true, options: VEHICLE_STATUSES},
     odometerKm:    {type: "number", required: false, min: 0},

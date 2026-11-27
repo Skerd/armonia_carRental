@@ -2,6 +2,7 @@ import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 import type {WeeklyHoursSlot} from "../../../../../core/helpers/weeklyHours.schema-def";
 import type {RentalPaymentPolicy} from "../../private/carRentalConfig/carRentalConfig.schema-def";
 import type {RentalExtraKind, RentalExtraPricing} from "../../private/rentalExtra/rentalExtra.schema-def";
+import type {VehicleColor} from "../../private/vehicle/vehicle.schema-def";
 import type {VEHICLE_FUEL_TYPES, VEHICLE_MILEAGE_POLICIES, VEHICLE_TRANSMISSIONS} from "../../private/vehicleCategory/vehicleCategory.schema-def";
 import type {RentalContact, RentalDriver, RentalPricing} from "../../private/rentalReservation/rentalReservation.dto";
 import type {RentalPaymentChoice, RentalPaymentStatus, RentalReservationStatus} from "../../private/rentalReservation/rentalReservation.constants";
@@ -69,7 +70,8 @@ export type RentalStorefrontCar = {
     make: string;
     model: string;
     year?: number;
-    color?: string;
+    /** A code of `VEHICLE_COLORS`; the site shows it in the reader's language. */
+    color?: VehicleColor;
     description?: string;
     /** Its listing photos, else the group's. */
     images: string[];

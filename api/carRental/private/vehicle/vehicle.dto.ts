@@ -11,7 +11,7 @@ import type {VehicleDocument} from "../vehicleDocument/vehicleDocument.dto";
 import type {VehicleFine} from "../vehicleFine/vehicleFine.dto";
 import type {VehicleInsurance} from "../vehicleInsurance/vehicleInsurance.dto";
 import type {VehicleMaintenance} from "../vehicleMaintenance/vehicleMaintenance.dto";
-import type {VehicleReadiness, VehicleStatus} from "./vehicle.schema-def";
+import type {VehicleColor, VehicleReadiness, VehicleStatus} from "./vehicle.schema-def";
 import type {VEHICLE_FUEL_TYPES, VEHICLE_TRANSMISSIONS} from "../vehicleCategory/vehicleCategory.schema-def";
 import type {EffectiveRates, RateSeason} from "../../../../helpers/vehicleRates";
 
@@ -26,7 +26,7 @@ export type Vehicle = DeletedData & OwnershipData & LifeCycleData & {
     year?: number;
     plate: string;
     vin?: string;
-    color?: string;
+    color?: VehicleColor;
     homeLocation?: RentalLocationSimple;
     currentLocation?: RentalLocationSimple;
     readiness: VehicleReadiness;
