@@ -83,6 +83,7 @@ export const RENTAL_PRICE_LINE_CODES = [
     "damage",
     "fine",
     "fine_admin",
+    "car_transfer",
 ] as const;
 export type RentalPriceLineCode = (typeof RENTAL_PRICE_LINE_CODES)[number];
 

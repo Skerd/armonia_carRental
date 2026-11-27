@@ -1,5 +1,6 @@
 import type {InferCreateForm} from "../../../../../core/helpers/schemaDefBuilder";
 import {buildCreateZodSchema} from "../../../../../core/helpers/schemaDefBuilder";
+import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 
 /** A reporting window of local dates, optionally one branch. */
 export const RentalReportsFormDef = {
@@ -42,8 +43,17 @@ export type RentalReportGroup = {
     revenue: number;
 };
 
+/** Bookings that started in the window, of a class ("or similar") or of an exact car rented on its own (D198). */
+export type RentalReportSaleKind = {
+    kind: "class" | "exact";
+    bookings: number;
+    revenue: number;
+};
+
 export type RentalReportsResponse = {
     data: {
+        /** The rental currency every amount is in (UX-07); absent until the company sets up its rental settings. */
+        currency?: CurrencySimple;
         from: string;
         to: string;
         timezone: string;
@@ -61,5 +71,6 @@ export type RentalReportsResponse = {
         byVehicle: RentalReportVehicle[];
         byCategory: RentalReportGroup[];
         byBranch: RentalReportGroup[];
+        bySaleKind: RentalReportSaleKind[];
     };
 };

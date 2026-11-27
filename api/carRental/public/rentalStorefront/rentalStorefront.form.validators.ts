@@ -64,3 +64,13 @@ export function categoryReviewsFormSchema(languageCode: string, form: Record<str
 }
 
 export type CategoryReviewsFormType = z.infer<ReturnType<typeof categoryReviewsFormSchema>>;
+
+/** The published reviews of one car rented on its own (D198): every rental of that car, as on its page. */
+export function carReviewsFormSchema(languageCode: string, form: Record<string, string> | null = null) {
+    return z.object({
+        vehicle: isObjectIdZod(form?.["vehicleLabel"] ?? "vehicle", languageCode),
+        limit: isIntegerZod(form?.["limitLabel"] ?? "limit", languageCode, {min: 1, max: 20}).optional(),
+    });
+}
+
+export type CarReviewsFormType = z.infer<ReturnType<typeof carReviewsFormSchema>>;

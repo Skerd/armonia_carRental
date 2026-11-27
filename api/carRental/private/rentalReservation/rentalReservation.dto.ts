@@ -102,6 +102,8 @@ export type RentalReservation = DeletedData & OwnershipData & LifeCycleData & {
     source: (typeof RENTAL_RESERVATION_SOURCES)[number];
     category?: VehicleCategorySimple;
     vehicle?: VehicleSimple;
+    /** This exact car was booked, at its own prices (D198); otherwise the class with any of its cars. */
+    exactVehicle: boolean;
     pickupLocation?: RentalLocationSimple;
     returnLocation?: RentalLocationSimple;
     pickupAt: string;
@@ -115,6 +117,8 @@ export type RentalReservation = DeletedData & OwnershipData & LifeCycleData & {
     pricing: RentalPricing;
     snapshot: {
         categoryName: string;
+        /** The exact car's name when it was booked (D198). */
+        vehicleTitle?: string;
         vehicleLabel?: string;
         pickupLocationName: string;
         pickupAddress?: string;
@@ -172,4 +176,7 @@ export type RentalFreeVehicle = {
     readiness: VehicleReadiness;
     /** Its insurance or road papers run out before the return: the handover would refuse it until they are renewed (TD-B264). */
     papersLapse?: boolean;
+    /** The group it belongs to; a car of another group is an upgrade or a re-priced booking (D198). */
+    groupName: string;
+    sameGroup: boolean;
 };

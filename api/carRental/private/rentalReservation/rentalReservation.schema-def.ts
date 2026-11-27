@@ -58,6 +58,8 @@ export const CreateRentalReservationFormDef = {
     ...RentalTripDef,
     category:       {type: "objectId", required: true},
     vehicle:        {type: "objectId", required: false},
+    /** This exact car at its own prices (D198); needs `vehicle`. Without it a picked car is only the class's assignment. */
+    exactVehicle:   {type: "boolean", required: false},
     extras:         {type: "embeddedArray", required: false, items: RentalExtraSelectionDef, maxItems: RENTAL_EXTRAS_MAX_ITEMS},
     contact:        {type: "embedded", required: true, items: RentalContactDef},
     customer:       {type: "objectId", required: false},
@@ -78,6 +80,7 @@ export type CreateRentalReservationFormType = InferCreateForm<typeof CreateRenta
 export const RentalReservationSchemaDef = {
     category:        {type: "objectId", required: true},
     vehicle:         {type: "objectId", required: false},
+    exactVehicle:    {type: "boolean", required: false},
     pickupLocation:  {type: "objectId", required: true},
     returnLocation:  {type: "objectId", required: true},
     customer:        {type: "objectId", required: false},
@@ -156,9 +159,15 @@ export const CancelRentalReservationFormDef = {
 } as const;
 export type CancelRentalReservationFormType = InferCreateForm<typeof CancelRentalReservationFormDef>;
 
+/** How a moved booking is priced: as booked (a free upgrade), or again for the new car (D198). */
+export const RENTAL_REASSIGN_PRICINGS = ["keep", "reprice"] as const;
+export type RentalReassignPricing = (typeof RENTAL_REASSIGN_PRICINGS)[number];
+
+/** "Change car": any free car, of the booking's group or another (D198). */
 export const ReassignRentalVehicleFormDef = {
     _id:     {type: "objectId", required: true},
     vehicle: {type: "objectId", required: true},
+    pricing: {type: "enum", required: false, options: RENTAL_REASSIGN_PRICINGS},
 } as const;
 export type ReassignRentalVehicleFormType = InferCreateForm<typeof ReassignRentalVehicleFormDef>;
 

@@ -1,7 +1,7 @@
 import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
 import type {Media} from "../../../../../core/types";
-import type {VehicleCategorySimple} from "../../../../dto/vehicleCategory.dto";
+import type {VehicleCategoryPriced} from "../../../../dto/vehicleCategory.dto";
 import type {RentalLocationSimple} from "../../../../dto/rentalLocation.dto";
 import type {RentalReservation} from "../rentalReservation/rentalReservation.dto";
 import type {VehicleBlock} from "../vehicleBlock/vehicleBlock.dto";
@@ -11,10 +11,12 @@ import type {VehicleFine} from "../vehicleFine/vehicleFine.dto";
 import type {VehicleInsurance} from "../vehicleInsurance/vehicleInsurance.dto";
 import type {VehicleMaintenance} from "../vehicleMaintenance/vehicleMaintenance.dto";
 import type {VehicleReadiness, VehicleStatus} from "./vehicle.schema-def";
+import type {VEHICLE_FUEL_TYPES, VEHICLE_TRANSMISSIONS} from "../vehicleCategory/vehicleCategory.schema-def";
+import type {EffectiveRates, RateSeason} from "../../../../helpers/vehicleRates";
 
 export type Vehicle = DeletedData & OwnershipData & LifeCycleData & {
     _id: string;
-    category?: VehicleCategorySimple;
+    category?: VehicleCategoryPriced;
     make: string;
     model: string;
     year?: number;
@@ -35,6 +37,27 @@ export type Vehicle = DeletedData & OwnershipData & LifeCycleData & {
     lastLatitude?: number;
     lastLongitude?: number;
     lastReportedAt?: string;
+    /** Rented on its own (D198): customers can book this exact car. */
+    listedAlone: boolean;
+    listingTitle?: string;
+    listingDescription?: string;
+    listingImages?: Media[];
+    /** Its own price list and deposit; absent ones come from the group. */
+    dailyRate?: number;
+    weekendDailyRate?: number;
+    weeklyRate?: number;
+    rateSeasons: (RateSeason & {currency?: CurrencySimple})[];
+    depositAmount?: number;
+    /** Its own specs where they differ from its category's (TD-B291). */
+    seats?: number;
+    doors?: number;
+    luggage?: number;
+    transmission?: (typeof VEHICLE_TRANSMISSIONS)[number];
+    fuelType?: (typeof VEHICLE_FUEL_TYPES)[number];
+    /** Set when the platform hid the car after a report (D191): gone from the rental site and the portal. */
+    hiddenByPlatform: boolean;
+    /** What booking this exact car costs: its own prices or its group's, added by the route. */
+    rates?: EffectiveRates;
     /** From the latest completed service record; never written by a form. */
     nextServiceDueAt?: string;
     nextServiceDueKm?: number;

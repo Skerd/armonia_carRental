@@ -548,5 +548,35 @@
   "rental_driver_license_dates_invalid": {
     "message": "Le permis de {} doit être délivré avant son expiration et au plus tard le jour de la prise en charge.",
     "error_code": "rental_driver_license_dates_invalid"
+  },
+  "rental_exact_vehicle_required": {
+    "message": "Choisissez la voiture pour réserver exactement celle-ci.",
+    "error_code": "rental_exact_vehicle_required",
+    "status": 400
+  },
+  "rental_vehicle_not_listed": {
+    "message": "Cette voiture n'est pas louée seule. Réservez plutôt son groupe.",
+    "error_code": "rental_vehicle_not_listed",
+    "status": 409
+  },
+  "rental_class_not_sold": {
+    "message": "{} se loue uniquement voiture par voiture. Choisissez l'une de ses voitures.",
+    "error_code": "rental_class_not_sold",
+    "status": 409
+  },
+  "rental_exact_car_elsewhere": {
+    "message": "Cette voiture sera à {} à ce moment-là. Prenez-la là-bas ou choisissez-en une autre.",
+    "error_code": "rental_exact_car_elsewhere",
+    "status": 409
+  },
+  "rental_exact_car_notice": {
+    "message": "Cette voiture doit venir d'une autre agence, ce qui demande {} heures de préavis. Choisissez une heure plus tardive ou une autre voiture.",
+    "error_code": "rental_exact_car_notice",
+    "status": 409
+  },
+  "vehicle_has_future_exact_reservations": {
+    "message": "Cette voiture a {} réservation(s) à venir d'elle exactement. Déplacez-les d'abord vers une autre voiture.",
+    "error_code": "vehicle_has_future_exact_reservations",
+    "status": 409
   }
 }

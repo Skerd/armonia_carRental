@@ -548,5 +548,35 @@
   "rental_driver_license_dates_invalid": {
     "message": "The driving licence of {} must be issued before it expires and by the pickup day.",
     "error_code": "rental_driver_license_dates_invalid"
+  },
+  "rental_exact_vehicle_required": {
+    "message": "Pick the car to book it exactly.",
+    "error_code": "rental_exact_vehicle_required",
+    "status": 400
+  },
+  "rental_vehicle_not_listed": {
+    "message": "This car isn't rented on its own. Book its group instead.",
+    "error_code": "rental_vehicle_not_listed",
+    "status": 409
+  },
+  "rental_class_not_sold": {
+    "message": "{} is only rented car by car. Pick one of its cars.",
+    "error_code": "rental_class_not_sold",
+    "status": 409
+  },
+  "rental_exact_car_elsewhere": {
+    "message": "This car will be at {} at that time. Pick it up there, or choose another car.",
+    "error_code": "rental_exact_car_elsewhere",
+    "status": 409
+  },
+  "rental_exact_car_notice": {
+    "message": "This car has to be brought from another branch, which needs {} hours' notice. Pick a later time or another car.",
+    "error_code": "rental_exact_car_notice",
+    "status": 409
+  },
+  "vehicle_has_future_exact_reservations": {
+    "message": "This car has {} upcoming booking(s) of it exactly. Move them to another car first.",
+    "error_code": "vehicle_has_future_exact_reservations",
+    "status": 409
   }
 }

@@ -548,5 +548,35 @@
   "rental_driver_license_dates_invalid": {
     "message": "Patenta e {} duhet të jetë lëshuar para skadimit dhe jo më vonë se dita e marrjes.",
     "error_code": "rental_driver_license_dates_invalid"
+  },
+  "rental_exact_vehicle_required": {
+    "message": "Zgjidhni makinën për ta rezervuar pikërisht atë.",
+    "error_code": "rental_exact_vehicle_required",
+    "status": 400
+  },
+  "rental_vehicle_not_listed": {
+    "message": "Kjo makinë nuk jepet me qira më vete. Rezervoni grupin e saj.",
+    "error_code": "rental_vehicle_not_listed",
+    "status": 409
+  },
+  "rental_class_not_sold": {
+    "message": "{} jepet me qira vetëm makinë për makinë. Zgjidhni një nga makinat e tij.",
+    "error_code": "rental_class_not_sold",
+    "status": 409
+  },
+  "rental_exact_car_elsewhere": {
+    "message": "Në atë kohë kjo makinë do të jetë në {}. Merreni atje ose zgjidhni një makinë tjetër.",
+    "error_code": "rental_exact_car_elsewhere",
+    "status": 409
+  },
+  "rental_exact_car_notice": {
+    "message": "Kjo makinë duhet sjellë nga një pikë tjetër, gjë që kërkon {} orë njoftim paraprak. Zgjidhni një orë më vonë ose një makinë tjetër.",
+    "error_code": "rental_exact_car_notice",
+    "status": 409
+  },
+  "vehicle_has_future_exact_reservations": {
+    "message": "Kjo makinë ka {} rezervim(e) të ardhshme pikërisht për të. Kalojini fillimisht te një makinë tjetër.",
+    "error_code": "vehicle_has_future_exact_reservations",
+    "status": 409
   }
 }

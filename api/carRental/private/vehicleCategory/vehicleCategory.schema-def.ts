@@ -17,7 +17,8 @@ export const VEHICLE_LUGGAGE = {min: 0, max: 20} as const;
 export const VEHICLE_DRIVER_AGE = {min: 16, max: 99} as const;
 
 /** A dated price override, inclusive of both local dates (summer, holidays). */
-const VehicleCategorySeasonDef = {
+/** A dated price per day; a car with its own prices (D198) has its own list of these. */
+export const VehicleCategorySeasonDef = {
     startDate: {type: "string", required: true, format: "localDate"},
     endDate:   {type: "string", required: true, format: "localDate"},
     dailyRate: {type: "number", required: true, min: 0},
@@ -47,8 +48,32 @@ export const VehicleCategorySchemaDef = {
     crossBorderAllowed:  {type: "boolean", required: false},
     crossBorderFee:      {type: "number", required: false, min: 0},
     isPublic:            {type: "boolean", required: false},
+    /**
+     * The group is booked as a class ("or similar", any free car of it). Off: the group is only a heading for its cars
+     * rented on their own (D198). Unset counts as on.
+     */
+    soldAsClass:         {type: "boolean", required: false},
     sortOrder:        {type: "number", required: false},
 } as const;
 
 export type CreateVehicleCategoryFormType = InferCreateForm<typeof VehicleCategorySchemaDef>;
 export type EditVehicleCategoryFormType = InferEditForm<typeof VehicleCategorySchemaDef>;
+
+/** The "Car prices" dialog on a category (D198): each of its cars rented on its own or not, at its own day price and deposit. */
+export const CAR_PRICES_MAX_CARS = 500;
+
+export const CarPriceRowDef = {
+    vehicle:       {type: "objectId", required: true},
+    listedAlone:   {type: "boolean", required: true},
+    /** Empty: the car follows the category's prices again. */
+    dailyRate:     {type: "number", required: false, min: 0},
+    /** Empty: the category's deposit. */
+    depositAmount: {type: "number", required: false, min: 0},
+} as const;
+
+export const SetCarPricesFormDef = {
+    _id:  {type: "objectId", required: true},
+    cars: {type: "embeddedArray", required: true, items: CarPriceRowDef, maxItems: CAR_PRICES_MAX_CARS},
+} as const;
+export type SetCarPricesFormType = InferCreateForm<typeof SetCarPricesFormDef>;
+

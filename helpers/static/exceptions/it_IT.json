@@ -548,5 +548,35 @@
   "rental_driver_license_dates_invalid": {
     "message": "La patente di {} deve essere rilasciata prima della scadenza ed entro il giorno del ritiro.",
     "error_code": "rental_driver_license_dates_invalid"
+  },
+  "rental_exact_vehicle_required": {
+    "message": "Scegli l'auto per prenotare esattamente quella.",
+    "error_code": "rental_exact_vehicle_required",
+    "status": 400
+  },
+  "rental_vehicle_not_listed": {
+    "message": "Quest'auto non si noleggia da sola. Prenota invece il suo gruppo.",
+    "error_code": "rental_vehicle_not_listed",
+    "status": 409
+  },
+  "rental_class_not_sold": {
+    "message": "{} si noleggia solo auto per auto. Scegli una delle sue auto.",
+    "error_code": "rental_class_not_sold",
+    "status": 409
+  },
+  "rental_exact_car_elsewhere": {
+    "message": "In quel momento quest'auto sarà a {}. Ritirala lì o scegline un'altra.",
+    "error_code": "rental_exact_car_elsewhere",
+    "status": 409
+  },
+  "rental_exact_car_notice": {
+    "message": "Quest'auto deve arrivare da un'altra filiale, il che richiede {} ore di preavviso. Scegli un orario più tardi o un'altra auto.",
+    "error_code": "rental_exact_car_notice",
+    "status": 409
+  },
+  "vehicle_has_future_exact_reservations": {
+    "message": "Quest'auto ha {} prenotazione/i in arrivo proprio di lei. Spostale prima su un'altra auto.",
+    "error_code": "vehicle_has_future_exact_reservations",
+    "status": 409
   }
 }

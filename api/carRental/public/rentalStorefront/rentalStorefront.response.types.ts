@@ -53,6 +53,33 @@ export type RentalStorefrontCategory = {
     minDriverAge?: number;
     crossBorderAllowed: boolean;
     crossBorderFee?: number;
+    /** Booked as a class ("or similar"); off when the group only heads its cars rented on their own (D198). */
+    soldAsClass: boolean;
+};
+
+/**
+ * A car rented on its own (D198): this exact car, never "or similar". Its specs are its own where it has them, else its
+ * group's (TD-B291); km policy, driver age and cross-border rules are always its group's (`category`). The plate is never
+ * sent.
+ */
+export type RentalStorefrontCar = {
+    _id: string;
+    category: string;
+    title: string;
+    make: string;
+    model: string;
+    year?: number;
+    color?: string;
+    description?: string;
+    /** Its listing photos, else the group's. */
+    images: string[];
+    dailyRate: number;
+    depositAmount: number;
+    seats: number;
+    doors?: number;
+    luggage?: number;
+    transmission: (typeof VEHICLE_TRANSMISSIONS)[number];
+    fuelType: (typeof VEHICLE_FUEL_TYPES)[number];
 };
 
 /** Everything the public site needs to render before the first search. */
@@ -76,7 +103,9 @@ export type RentalStorefrontConfigResponse = {
         termsVersion?: string;
         termsText?: string;
         locations: RentalStorefrontLocation[];
+        /** Every public group, classes and the groups that only head cars rented on their own. */
         categories: RentalStorefrontCategory[];
+        cars: RentalStorefrontCar[];
         extras: RentalStorefrontExtra[];
     };
 };
@@ -88,7 +117,13 @@ export type RentalSearchResponse = {
     data: {
         pickupAt: string;
         returnAt: string;
+        /** The groups booked as a class. */
         results: {category: RentalStorefrontCategory; available: boolean; quote: RentalQuote}[];
+        /**
+         * The cars rented on their own, free for the trip and at the pickup branch then (or brought there for the
+         * transfer fee in the quote, when the company allows it).
+         */
+        cars: {car: RentalStorefrontCar; quote: RentalQuote}[];
     };
 };
 
@@ -100,6 +135,9 @@ export type PublicRentalReservation = {
     number: string;
     status: RentalReservationStatus;
     categoryName: string;
+    /** This exact car was booked (D198): its name, which replaces "or similar". */
+    exactVehicle: boolean;
+    vehicleTitle?: string;
     vehicleLabel?: string;
     pickupLocationName: string;
     pickupAddress?: string;

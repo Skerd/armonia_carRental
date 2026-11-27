@@ -24,6 +24,8 @@ export type SearchRentalFormType = InferCreateForm<typeof SearchRentalFormDef>;
 export const QuoteRentalFormDef = {
     ...RentalTripDef,
     category:        {type: "objectId", required: true},
+    /** This exact car of the group, rented on its own at its own prices (D198); without it, the class. */
+    vehicle:         {type: "objectId", required: false},
     extras:          {type: "embeddedArray", required: false, items: RentalExtraSelectionDef, maxItems: RENTAL_EXTRAS_MAX_ITEMS},
     /** The main driver's birth date, for the minimum age and the young-driver fee. */
     driverBirthDate: {type: "string", required: false, format: "localDate"},

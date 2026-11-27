@@ -548,5 +548,35 @@
   "rental_driver_license_dates_invalid": {
     "message": "Der Führerschein von {} muss vor seinem Ablauf und spätestens am Abholtag ausgestellt sein.",
     "error_code": "rental_driver_license_dates_invalid"
+  },
+  "rental_exact_vehicle_required": {
+    "message": "Wählen Sie das Fahrzeug, um genau dieses zu buchen.",
+    "error_code": "rental_exact_vehicle_required",
+    "status": 400
+  },
+  "rental_vehicle_not_listed": {
+    "message": "Dieses Fahrzeug wird nicht einzeln vermietet. Buchen Sie stattdessen seine Gruppe.",
+    "error_code": "rental_vehicle_not_listed",
+    "status": 409
+  },
+  "rental_class_not_sold": {
+    "message": "{} wird nur Fahrzeug für Fahrzeug vermietet. Wählen Sie eines seiner Fahrzeuge.",
+    "error_code": "rental_class_not_sold",
+    "status": 409
+  },
+  "rental_exact_car_elsewhere": {
+    "message": "Dieses Fahrzeug steht zu dieser Zeit in {}. Holen Sie es dort ab oder wählen Sie ein anderes.",
+    "error_code": "rental_exact_car_elsewhere",
+    "status": 409
+  },
+  "rental_exact_car_notice": {
+    "message": "Dieses Fahrzeug muss aus einer anderen Filiale gebracht werden, was {} Stunden Vorlauf braucht. Wählen Sie eine spätere Zeit oder ein anderes Fahrzeug.",
+    "error_code": "rental_exact_car_notice",
+    "status": 409
+  },
+  "vehicle_has_future_exact_reservations": {
+    "message": "Für genau dieses Fahrzeug gibt es {} kommende Buchung(en). Verschieben Sie sie zuerst auf ein anderes Fahrzeug.",
+    "error_code": "vehicle_has_future_exact_reservations",
+    "status": 409
   }
 }

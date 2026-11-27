@@ -1,4 +1,13 @@
 import type {InferCreateForm, InferEditForm} from "../../../../../core/helpers/schemaDefBuilder";
+import {
+    VEHICLE_CATEGORY_SEASONS_MAX_ITEMS,
+    VEHICLE_DOORS,
+    VEHICLE_FUEL_TYPES,
+    VEHICLE_LUGGAGE,
+    VEHICLE_SEATS,
+    VEHICLE_TRANSMISSIONS,
+    VehicleCategorySeasonDef,
+} from "../vehicleCategory/vehicleCategory.schema-def";
 
 /** Whether a car can go out again: set to `needs_cleaning` at every return, back to `ready` by staff. */
 export const VEHICLE_READINESS = ["ready", "needs_cleaning", "needs_check"] as const;
@@ -26,6 +35,10 @@ export const VEHICLE_VIDEOS_MAX = 3;
 /** Scans and invoices on insurance, document and service records. */
 export const VEHICLE_RECORD_ATTACHMENTS_MAX = 10;
 export const VEHICLE_RECORD_NOTES_MAX = 2000;
+/** The car's own page when it is rented on its own (D198). */
+export const VEHICLE_LISTING_TITLE_MAX = 128;
+export const VEHICLE_LISTING_DESCRIPTION_MAX = 2000;
+export const VEHICLE_LISTING_IMAGES_MAX = 12;
 
 export const VehicleSchemaDef = {
     category:      {type: "objectId", required: true},
@@ -48,6 +61,25 @@ export const VehicleSchemaDef = {
     lastLatitude:  {type: "number", required: false, min: -90, max: 90},
     lastLongitude: {type: "number", required: false, min: -180, max: 180},
     lastReportedAt:{type: "date", required: false},
+    // Rented on its own (D198): customers can book this exact car, at its own prices when it has them.
+    listedAlone:        {type: "boolean", required: false},
+    listingTitle:       {type: "string", required: false, max: VEHICLE_LISTING_TITLE_MAX},
+    listingDescription: {type: "string", required: false, max: VEHICLE_LISTING_DESCRIPTION_MAX},
+    // Public, unlike `images`: staff pick photos that do not show the plate. Empty: the group's photos.
+    listingImages:      {type: "mediaIdArray", required: false, publicAccess: true},
+    // Its own price list replaces the group's whole list (day, weekend, week, seasons) when `dailyRate` is set.
+    dailyRate:          {type: "number", required: false, min: 0},
+    weekendDailyRate:   {type: "number", required: false, min: 0},
+    weeklyRate:         {type: "number", required: false, min: 0},
+    rateSeasons:        {type: "embeddedArray", required: false, items: VehicleCategorySeasonDef, maxItems: VEHICLE_CATEGORY_SEASONS_MAX_ITEMS},
+    // Its own deposit; empty: the group's.
+    depositAmount:      {type: "number", required: false, min: 0},
+    // Its own specs where they differ from its category's (TD-B291); empty: the category's.
+    seats:              {type: "number", required: false, ...VEHICLE_SEATS},
+    doors:              {type: "number", required: false, ...VEHICLE_DOORS},
+    luggage:            {type: "number", required: false, ...VEHICLE_LUGGAGE},
+    transmission:       {type: "enum", required: false, options: VEHICLE_TRANSMISSIONS},
+    fuelType:           {type: "enum", required: false, options: VEHICLE_FUEL_TYPES},
 } as const;
 
 export type CreateVehicleFormType = InferCreateForm<typeof VehicleSchemaDef>;

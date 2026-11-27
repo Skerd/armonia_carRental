@@ -34,4 +34,8 @@ export type CarRentalConfig = DeletedData & OwnershipData & LifeCycleData & {
     cleaningFee?: number;
     smokingFee?: number;
     fineAdminFee?: number;
+    /** Cars rented on their own may be brought from another branch, for this fee and notice (D198). */
+    exactCarTransfers: boolean;
+    exactCarTransferFee?: number;
+    exactCarTransferNoticeHours?: number;
 };

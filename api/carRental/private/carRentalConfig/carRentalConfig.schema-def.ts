@@ -50,6 +50,11 @@ export const CarRentalConfigSchemaDef = {
     cleaningFee:              {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
     smokingFee:               {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
     fineAdminFee:             {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
+    // A car rented on its own (D198) is offered online only at the branch where it will be at pickup, unless staff
+    // may bring it from another branch: then also elsewhere, for this fee and with this much notice.
+    exactCarTransfers:           {type: "boolean", required: false},
+    exactCarTransferFee:         {type: "number", required: false, ...RENTAL_FEE_AMOUNT},
+    exactCarTransferNoticeHours: {type: "number", required: false, ...RENTAL_LEAD_TIME_HOURS},
 } as const;
 
 export type CreateCarRentalConfigFormType = InferCreateForm<typeof CarRentalConfigSchemaDef>;
