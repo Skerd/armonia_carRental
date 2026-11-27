@@ -2,6 +2,7 @@ import type {CurrencySimple} from "../../../../../core/dto/currency.dto";
 import type {DeletedData, LifeCycleData, OwnershipData} from "../../../../../core/types/shared.types";
 import type {Media} from "../../../../../core/types";
 import type {VehicleCategoryPriced} from "../../../../dto/vehicleCategory.dto";
+import type {VehicleCatalogEntrySimple} from "../../../../dto/vehicleCatalog.dto";
 import type {RentalLocationSimple} from "../../../../dto/rentalLocation.dto";
 import type {RentalReservation} from "../rentalReservation/rentalReservation.dto";
 import type {VehicleBlock} from "../vehicleBlock/vehicleBlock.dto";
@@ -17,6 +18,9 @@ import type {EffectiveRates, RateSeason} from "../../../../helpers/vehicleRates"
 export type Vehicle = DeletedData & OwnershipData & LifeCycleData & {
     _id: string;
     category?: VehicleCategoryPriced;
+    /** Its make and model in the platform's vehicle catalog (D199); `make` and `model` carry their names. */
+    catalogMake?: VehicleCatalogEntrySimple;
+    catalogModel?: VehicleCatalogEntrySimple;
     make: string;
     model: string;
     year?: number;

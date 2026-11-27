@@ -42,8 +42,15 @@ export const VEHICLE_LISTING_IMAGES_MAX = 12;
 
 export const VehicleSchemaDef = {
     category:      {type: "objectId", required: true},
-    make:          {type: "string", required: true, min: 1, max: VEHICLE_MAKE_MAX},
-    model:         {type: "string", required: true, min: 1, max: VEHICLE_MODEL_MAX},
+    /**
+     * Its make and model in the platform's vehicle catalog (D199): a new car needs both, and the model must be one of
+     * the make's; the model fills the car's empty specs.
+     */
+    catalogMake:   {type: "objectId", required: false},
+    catalogModel:  {type: "objectId", required: false},
+    // The catalog's names, written by the server from `catalogMake`/`catalogModel` (titles, search and records read them).
+    make:          {type: "string", required: false, min: 1, max: VEHICLE_MAKE_MAX},
+    model:         {type: "string", required: false, min: 1, max: VEHICLE_MODEL_MAX},
     year:          {type: "number", required: false, ...VEHICLE_YEAR},
     plate:         {type: "string", required: true, min: 1, max: VEHICLE_PLATE_MAX},
     vin:           {type: "string", required: false, max: VEHICLE_VIN_MAX},

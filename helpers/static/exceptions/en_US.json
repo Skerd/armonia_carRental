@@ -578,5 +578,30 @@
     "message": "This car has {} upcoming booking(s) of it exactly. Move them to another car first.",
     "error_code": "vehicle_has_future_exact_reservations",
     "status": 409
+  },
+  "vehicleCatalogEntry_not_found": {
+    "message": "The vehicle catalog entry was not found.",
+    "error_code": "vehicleCatalogEntry_not_found",
+    "status": 404
+  },
+  "vehicle_catalog_parent_level": {
+    "message": "A make belongs to a vehicle type and a model to a make; a type has no parent.",
+    "error_code": "vehicle_catalog_parent_level",
+    "status": 400
+  },
+  "vehicle_catalog_model_level": {
+    "message": "Pick a model from the vehicle catalog, not a type or a make.",
+    "error_code": "vehicle_catalog_model_level",
+    "status": 400
+  },
+  "vehicle_catalog_model_required": {
+    "message": "Pick the car's make and model from the vehicle catalog. Missing? Request it in the vehicle catalog.",
+    "error_code": "vehicle_catalog_model_required",
+    "status": 400
+  },
+  "vehicle_catalog_model_make": {
+    "message": "That model is not one of the chosen make's. Pick the model again.",
+    "error_code": "vehicle_catalog_model_make",
+    "status": 400
   }
 }

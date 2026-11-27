@@ -578,5 +578,30 @@
     "message": "Quest'auto ha {} prenotazione/i in arrivo proprio di lei. Spostale prima su un'altra auto.",
     "error_code": "vehicle_has_future_exact_reservations",
     "status": 409
+  },
+  "vehicleCatalogEntry_not_found": {
+    "message": "La voce del catalogo veicoli non è stata trovata.",
+    "error_code": "vehicleCatalogEntry_not_found",
+    "status": 404
+  },
+  "vehicle_catalog_parent_level": {
+    "message": "Una marca appartiene a un tipo di veicolo e un modello a una marca; un tipo non ha un genitore.",
+    "error_code": "vehicle_catalog_parent_level",
+    "status": 400
+  },
+  "vehicle_catalog_model_level": {
+    "message": "Scegli un modello dal catalogo veicoli, non un tipo o una marca.",
+    "error_code": "vehicle_catalog_model_level",
+    "status": 400
+  },
+  "vehicle_catalog_model_required": {
+    "message": "Scegli marca e modello dell'auto dal catalogo veicoli. Manca? Richiedilo nel catalogo veicoli.",
+    "error_code": "vehicle_catalog_model_required",
+    "status": 400
+  },
+  "vehicle_catalog_model_make": {
+    "message": "Quel modello non appartiene alla marca scelta. Scegli di nuovo il modello.",
+    "error_code": "vehicle_catalog_model_make",
+    "status": 400
   }
 }

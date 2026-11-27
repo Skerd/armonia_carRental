@@ -578,5 +578,30 @@
     "message": "Kjo makinë ka {} rezervim(e) të ardhshme pikërisht për të. Kalojini fillimisht te një makinë tjetër.",
     "error_code": "vehicle_has_future_exact_reservations",
     "status": 409
+  },
+  "vehicleCatalogEntry_not_found": {
+    "message": "Hyrja në katalogun e automjeteve nuk u gjet.",
+    "error_code": "vehicleCatalogEntry_not_found",
+    "status": 404
+  },
+  "vehicle_catalog_parent_level": {
+    "message": "Një markë i përket një lloji automjeti dhe një model një marke; një lloj nuk ka prind.",
+    "error_code": "vehicle_catalog_parent_level",
+    "status": 400
+  },
+  "vehicle_catalog_model_level": {
+    "message": "Zgjidhni një model nga katalogu i automjeteve, jo një lloj apo markë.",
+    "error_code": "vehicle_catalog_model_level",
+    "status": 400
+  },
+  "vehicle_catalog_model_required": {
+    "message": "Zgjidhni markën dhe modelin e makinës nga katalogu i automjeteve. Mungon? Kërkojeni te katalogu i automjeteve.",
+    "error_code": "vehicle_catalog_model_required",
+    "status": 400
+  },
+  "vehicle_catalog_model_make": {
+    "message": "Ai model nuk i përket markës së zgjedhur. Zgjidhni përsëri modelin.",
+    "error_code": "vehicle_catalog_model_make",
+    "status": 400
   }
 }

@@ -578,5 +578,30 @@
     "message": "Für genau dieses Fahrzeug gibt es {} kommende Buchung(en). Verschieben Sie sie zuerst auf ein anderes Fahrzeug.",
     "error_code": "vehicle_has_future_exact_reservations",
     "status": 409
+  },
+  "vehicleCatalogEntry_not_found": {
+    "message": "Der Eintrag im Fahrzeugkatalog wurde nicht gefunden.",
+    "error_code": "vehicleCatalogEntry_not_found",
+    "status": 404
+  },
+  "vehicle_catalog_parent_level": {
+    "message": "Eine Marke gehört zu einem Fahrzeugtyp und ein Modell zu einer Marke; ein Typ hat keinen übergeordneten Eintrag.",
+    "error_code": "vehicle_catalog_parent_level",
+    "status": 400
+  },
+  "vehicle_catalog_model_level": {
+    "message": "Wählen Sie ein Modell aus dem Fahrzeugkatalog, keinen Typ und keine Marke.",
+    "error_code": "vehicle_catalog_model_level",
+    "status": 400
+  },
+  "vehicle_catalog_model_required": {
+    "message": "Wählen Sie Marke und Modell des Fahrzeugs aus dem Fahrzeugkatalog. Fehlt es? Beantragen Sie es im Fahrzeugkatalog.",
+    "error_code": "vehicle_catalog_model_required",
+    "status": 400
+  },
+  "vehicle_catalog_model_make": {
+    "message": "Dieses Modell gehört nicht zur gewählten Marke. Wählen Sie das Modell erneut.",
+    "error_code": "vehicle_catalog_model_make",
+    "status": 400
   }
 }
